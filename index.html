@@ -3,57 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyberpunk Design</title>
+    <title>Eye Patch</title>
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Additional CSS for scrolling */
+        body, html {
+            height: 100%; /* Set height to fill viewport */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
         body {
-            background-color: #0d0d0d;
-            color: #ff0000;
-            font-family: 'Oxanium', sans-serif;
+            background-color: #0d0d0d; /* Dark background color */
+            color: #ff0000; /* Neon red text color */
+            font-family: 'Transformers', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        h1 {
-            color: #ff00ff;
-            text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+        /* Projects section styles */
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            width: 90%; /* Adjust width to fit container */
+            max-width: 1200px;
         }
-        .button {
-            background-color: #1a1a1a;
-            border: 2px solid #00ff00;
-            color: #00ff00;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
+        .project {
+            background-color: #1a1a1a; /* Dark background for project */
+            padding: 1em;
+            border: 1px solid #ff0000; /* Neon red border */
+            margin-bottom: 1em;
+            box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000; /* Neon glow effect */
+            width: calc(20% - 10px); /* 5 projects per row with spacing */
+            margin-right: 10px; /* Spacing between projects */
+            text-align: center; /* Center-align text and images */
+            box-sizing: border-box; /* Ensure padding and border are included in width */
         }
-        .button:hover {
-            background-color: #00ff00;
-            color: #0d0d0d;
-            box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+        .project:nth-child(5n) {
+            margin-right: 0; /* Remove right margin for every 5th element */
         }
-        /* CSS for Social Links */
-        .social-links a {
-            display: inline-block;
-            transition: filter 0.3s ease-in-out;
+        .project img {
+            width: 100%; /* Make images responsive */
+            height: auto;
         }
-
+        /* Footer styles */
+        footer {
+            padding: 1em;
+            width: 100%;
+            background-color: #1a1a1a; /* Dark background for footer */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 2px solid #ff0000; /* Neon red border */
+        }
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        #contact {
+            text-align: left;
+        }
+        .social-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .social-links li {
+            margin-right: 1em;
+        }
         .social-links img {
             width: 24px; /* Adjust size of the icons */
             height: 24px;
-            filter: brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(0deg); /* Red color */
-        }
-
-        .social-links a:hover img {
-            filter: brightness(0) invert(1); /* White color */
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Eye Patch</h1>
+        <h1 class="top-right">Eye Patch</h1>
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
@@ -108,44 +138,58 @@
         <h2>My Projects</h2>
         <div class="projects-container">
             <div class="project">
-                <img src="F:\Website\Project Icons\NeoPusle.png" alt="Neo Pulse">
-                <h3>Neo Pulse</h3>
-                <p>Sci-fi hack and slash Action</p>
+                <a href="https://eyepatch012.itch.io/neo-pulse"> <!-- Link to Project 1 page -->
+                    <img src="Project Icons\NeoPusle.png" alt="Neo Pulse">
+                    <h3>Neo Pulse</h3>
+                    <p>Sci-fi hack and slash Action</p>
+                </a>
             </div>
             <div class="project">
-                <img src="F:\Website\Project Icons\ShadowRupture.png" alt="Shadow Rupture">
-                <h3>Shadow Rupture</h3>
-                <p>Sci-fi hack and slash Action</p>
+                <a href="https://eyepatch012.itch.io/shadow-rupture"> <!-- Link to Project 2 page -->
+                    <img src="Project Icons\ShadowRupture.png" alt="Shadow Rupture">
+                    <h3>Shadow Rupture</h3>
+                    <p>Sci-fi hack and slash Action</p>
+                </a>
             </div>
             <div class="project">
-                <img src="F:\Website\Project Icons\Roger'sAdventure.png" alt="Roger's Adventure">
-                <h3>Roger's Adventure</h3>
-                <p>Fun side-scroller Platformer</p>
+                <a href="https://eyepatch012.itch.io/rogers-adventure"> <!-- Link to Project 3 page -->
+                    <img src="Project Icons\Roger'sAdventure.png" alt="Roger's Adventure">
+                    <h3>Roger's Adventure</h3>
+                    <p>Fun side-scroller Platformer</p>
+                </a>
             </div>
             <div class="project">
-                <img src="F:\Website\Project Icons\CyberTrap.png" alt="Cyber Trap">
-                <h3>Cyber Trap</h3>
-                <p>Sci-fi side-scroller Platformer</p>
+                <a href="https://eyepatch012.itch.io/cyber-trap"> <!-- Link to Project 4 page -->
+                    <img src="Project Icons\CyberTrap.png" alt="Cyber Trap">
+                    <h3>Cyber Trap</h3>
+                    <p>Sci-fi side-scroller Platformer</p>
+                </a>
             </div>
         </div>
     </section>
+    
+
     <footer>
         <div class="footer-container">
+            
             <ul class="social-links">
                 <p3>Contact Me :&nbsp; </p3> <!-- "Contact Me" text -->
-                <li><a href="https://twitter.com/yourprofile" target="_blank"><img src="path/to/twitter-icon.png" alt="Twitter"></a></li>
-                <li><a href="https://linkedin.com/in/yourprofile" target="_blank"><img src="path/to/linkedin-icon.png" alt="LinkedIn"></a></li>
-                <li><a href="https://github.com/yourprofile" target="_blank"><img src="path/to/github-icon.png" alt="GitHub"></a></li>
-                <li><a href="https://instagram.com/yourprofile" target="_blank"><img src="path/to/instagram-icon.png" alt="Instagram"></a></li>
-            </ul>
-            <p2>2024 My Game Dev Portfolio</p2>
+                <li><a href="https://twitter.com/yourprofile" target="_blank"><img src="Social Media Icons\twitter_6422210.png" alt="Twitter"></a></li>
+                <li><a href="https://linkedin.com/in/yourprofile" target="_blank"><img src="Social Media Icons\linkedin_3536569.png" alt="LinkedIn"></a></li>
+                <li><a href="https://github.com/yourprofile" target="_blank"><img src="Social Media Icons\pngwing.com.png" alt="GitHub"></a></li>
+                <li><a href="https://instagram.com/yourprofile" target="_blank"><img src="Social Media Icons\instagram_1384047.png" alt="Instagram"></a></li>
+            </ul><p2>2024 My Game Dev Portfolio</p2>
         </div>
     </footer>
+    
+    
     <script src="scripts.js"></script>
+
     <!-- Background Video -->
     <video class="video-bg" autoplay muted loop style="opacity: 0.25;">
-        <source src="F:\Website\Portal.mp4">
+        <source src="Portal.mp4">
         Your browser does not support the video tag.
     </video>
+    
 </body>
 </html>
