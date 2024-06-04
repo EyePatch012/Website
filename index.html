@@ -6,80 +6,6 @@
     <title>Eye Patch</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* Additional CSS for scrolling */
-        body, html {
-            height: 100%; /* Set height to fill viewport */
-            overflow-y: auto; /* Enable vertical scrolling */
-        }
-        body {
-            background-color: #0d0d0d; /* Dark background color */
-            color: #ff0000; /* Neon red text color */
-            font-family: 'Transformers', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        /* Projects section styles */
-        .projects-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            width: 90%; /* Adjust width to fit container */
-            max-width: 1200px;
-        }
-        .project {
-            background-color: #1a1a1a; /* Dark background for project */
-            padding: 1em;
-            border: 1px solid #ff0000; /* Neon red border */
-            margin-bottom: 1em;
-            box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000; /* Neon glow effect */
-            width: calc(20% - 10px); /* 5 projects per row with spacing */
-            margin-right: 10px; /* Spacing between projects */
-            text-align: center; /* Center-align text and images */
-            box-sizing: border-box; /* Ensure padding and border are included in width */
-        }
-        .project:nth-child(5n) {
-            margin-right: 0; /* Remove right margin for every 5th element */
-        }
-        .project img {
-            width: 100%; /* Make images responsive */
-            height: auto;
-        }
-        /* Footer styles */
-        footer {
-            padding: 1em;
-            width: 100%;
-            background-color: #1a1a1a; /* Dark background for footer */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 2px solid #ff0000; /* Neon red border */
-        }
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-        }
-        #contact {
-            text-align: left;
-        }
-        .social-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-        .social-links li {
-            margin-right: 1em;
-        }
-        .social-links img {
-            width: 24px; /* Adjust size of the icons */
-            height: 24px;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -93,11 +19,11 @@
         </nav>
     </header>
     <section id="about">
-        <h2>About Me</h2>
-        <p>I'm EyePatch, a passionate gamer, digital artist, and game developer who loves to design and develop games, and make digital art.</p>
+        <h2 class="text-white">About Me</h2>
+        <p>I am EyePatch, an enthusiastic gamer, digital artist, and game developer with a passion for creating games and producing digital art.</p>
     </section>
     <section id="skills">
-        <h2>Skills</h2>
+        <h2 class="text-white">Skills</h2>
         <div class="skill">
             <h3>Language</h3>
             <ul>
@@ -131,68 +57,60 @@
         </div>
         <div class="skill">
             <h3>Communication</h3>
-            <p>Fluency in reading, writing and speaking English and Bengla</p>
+            <p>Fluency in reading, writing and speaking English and Bangla</p>
         </div>
     </section>
     <section id="portfolio">
-        <h2>My Projects</h2>
+        <h2 class="text-white">My Projects</h2>
         <div class="projects-container">
             <div class="project">
                 <a href="https://eyepatch012.itch.io/neo-pulse"> <!-- Link to Project 1 page -->
-                    <img src="Project Icons\NeoPusle.png" alt="Neo Pulse">
+                    <img src="Project Icons/NeoPusle.png" alt="Neo Pulse">
                     <h3>Neo Pulse</h3>
                     <p>Sci-fi hack and slash Action</p>
                 </a>
             </div>
             <div class="project">
                 <a href="https://eyepatch012.itch.io/shadow-rupture"> <!-- Link to Project 2 page -->
-                    <img src="Project Icons\ShadowRupture.png" alt="Shadow Rupture">
+                    <img src="Project Icons/ShadowRupture.png" alt="Shadow Rupture">
                     <h3>Shadow Rupture</h3>
                     <p>Sci-fi hack and slash Action</p>
                 </a>
             </div>
             <div class="project">
                 <a href="https://eyepatch012.itch.io/rogers-adventure"> <!-- Link to Project 3 page -->
-                    <img src="Project Icons\Roger'sAdventure.png" alt="Roger's Adventure">
+                    <img src="Project Icons/Roger'sAdventure.png" alt="Roger's Adventure">
                     <h3>Roger's Adventure</h3>
                     <p>Fun side-scroller Platformer</p>
                 </a>
             </div>
             <div class="project">
                 <a href="https://eyepatch012.itch.io/cyber-trap"> <!-- Link to Project 4 page -->
-                    <img src="Project Icons\CyberTrap.png" alt="Cyber Trap">
+                    <img src="Project Icons/CyberTrap.png" alt="Cyber Trap">
                     <h3>Cyber Trap</h3>
                     <p>Sci-fi side-scroller Platformer</p>
                 </a>
             </div>
         </div>
     </section>
-    
-
     <footer>
         <div class="footer-container">
-            
             <ul class="social-links">
-                <p2>Contact Me :&nbsp; </p2> <!-- "Contact Me" text -->
-                <li><a href="https://x.com/EyePatch_012" target="_blank"><img src="Social Media Icons\twitter_6422210.png" alt="Twitter"></a></li>
-                <li><a href="https://linkedin.com/in/yourprofile" target="_blank"><img src="Social Media Icons\linkedin_3536569.png" alt="LinkedIn"></a></li>
-                <li><a href="https://github.com/EyePatch012" target="_blank"><img src="Social Media Icons\pngwing.com.png" alt="GitHub"></a></li>
-                <li><a href="https://www.instagram.com/eyepatch_012/" target="_blank"><img src="Social Media Icons\instagram_1384047.png" alt="Instagram"></a></li>
-            </ul> 
+                <p2>Contact Me :&nbsp </p2>
+                <li><a href="https://x.com/EyePatch_012" target="_blank"><img src="Social Media Icons/twitter_6422210.png" alt="Twitter"></a></li>
+                <li><a href="https://linkedin.com/in/yourprofile" target="_blank"><img src="Social Media Icons/linkedin_3536569.png" alt="LinkedIn"></a></li>
+                <li><a href="https://github.com/EyePatch012" target="_blank"><img src="Social Media Icons/pngwing.com.png" alt="GitHub"></a></li>
+                <li><a href="https://www.instagram.com/eyepatch_012/" target="_blank"><img src="Social Media Icons/instagram_1384047.png" alt="Instagram"></a></li>
+            </ul>
             <ul class="copyright">
                 <p2>2024 My Game Dev Portfolio</p2>
-            </ul> 
+            </ul>
         </div>
     </footer>
-    
-    
     <script src="scripts.js"></script>
-
-    <!-- Background Video -->
     <video class="video-bg" autoplay muted loop style="opacity: 0.25;">
         <source src="Portal.mp4">
         Your browser does not support the video tag.
     </video>
-    
 </body>
 </html>
