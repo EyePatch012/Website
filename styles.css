@@ -16,6 +16,10 @@ body {
     align-items: center;
     overflow: hidden; /* Hide overflow to prevent scroll bars */
     position: relative; /* Position relative for pseudo-element */
+
+    background-image: linear-gradient(#000000 2px, transparent 2px), 
+                      linear-gradient(to right, #000000 2px, #190000 2px);
+    background-size: 50px 50px;
 }
 
 .video-bg {
@@ -95,6 +99,7 @@ section {
     box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000; /* Neon glow effect */
 }
 
+
 form {
     display: flex;
     flex-direction: column;
@@ -120,20 +125,22 @@ footer {
     padding: 0;
     margin: 0;
     display: flex;
+    animation: neon 1.5s ease-in-out infinite alternate;
+}
+.copyright {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    animation: neon 1.5s ease-in-out infinite alternate;
 }
 
 .social-links li {
     margin-right: 1em;
 }
 
-p3 {
-    color: #ff0000; /* Change the color of the "Contact Me" text */
-    margin-left: 1em; /* Add spacing between "Contact Me" and links */
-    margin-bottom: 0; /* Remove bottom margin */
-}
-
 p2 {
-    color: #ff0000; /* Change the color of the copyright text */
+    color: #ffffff; /* Change the color of the copyright text */
     margin-right: 1em; /* Push copyright text to the right */
     margin-bottom: 0; /* Remove bottom margin */
 }
@@ -190,4 +197,29 @@ h1 {
 }
 .footer-container img:hover {
     filter: brightness(5000) saturate(0%);
+}
+
+@keyframes neon {
+    0%, 100% {
+        text-shadow: 
+            0 0 5px #ff0000, 
+            0 0 10px #ff0000, 
+            0 0 20px #ff0000, 
+            0 0 40px #ff0000, 
+            0 0 80px #ff0000, 
+            0 0 90px #ff0000, 
+            0 0 100px #ff0000, 
+            0 0 150px #ff0000;
+    }
+    50% {
+        text-shadow: 
+            0 0 2px #ff0000, 
+            0 0 5px #ff0000, 
+            0 0 10px #ff0000, 
+            0 0 20px #ff0000, 
+            0 0 40px #ff0000, 
+            0 0 50px #ff0000, 
+            0 0 75px #ff0000, 
+            0 0 100px #ff0000;
+    }
 }
