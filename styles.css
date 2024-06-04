@@ -199,3 +199,12 @@ h1 {
 .social-links a:hover {
     color: #ffffff; /* Change link color to white on hover */
 }
+.Twitter a {
+    color: #ff0000; /* Set link color to red */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.Twitter a:hover {
+    color: #ffffff; /* Change link color to white on hover */
+}
