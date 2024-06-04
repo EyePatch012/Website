@@ -1,0 +1,201 @@
+/* styles.css */
+@font-face {
+    font-family: 'Transformers';
+    src: url('F:\Website\transformers_movie') format('truetype'); /* Update with your absolute path */
+    /* Add additional font formats if necessary (e.g., woff, woff2) */
+}
+
+
+body {
+    color: #ff0000; /* Neon red text color */
+    font-family: 'Transformers', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Hide overflow to prevent scroll bars */
+    position: relative; /* Position relative for pseudo-element */
+}
+
+.video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Set below other content */
+    object-fit: cover;
+    pointer-events: none; /* Prevent interaction */
+}
+
+
+/* Optional flicker effect animation */
+@keyframes flicker {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.9;
+    }
+}
+
+
+header {
+    width: 100%;
+    padding: 1em;
+    background-color: #1a1a1a; /* Dark background for header */
+    text-align: right;
+    border-bottom: 2px solid #ff0000; /* Neon red border */
+    position: relative; /* For positioning the top-right text */
+}
+
+.top-right {
+    position: absolute;
+    top: -50px; /* Adjust the top position as needed */
+    left: 50px; /* Adjust the left position as needed */
+    font-family: 'Transformers', sans-serif; /* SD Glitch Robot font */
+    color: #000000; /* Neon red text color */
+    font-size: 5em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 0 1em;
+}
+
+nav a {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #FFFFFF; /* White text on hover for navigation links */
+}
+
+section {
+    padding: 2em;
+    width: 80%;
+    max-width: 800px;
+    border-bottom: 2px solid #ff0000; /* Neon red border */
+    margin-bottom: 2em;
+}
+
+.project {
+    background-color: #1a1a1a; /* Dark background for project */
+    padding: 1em;
+    border: 1px solid #ff0000; /* Neon red border */
+    margin-bottom: 1em;
+    box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000; /* Neon glow effect */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 1em;
+}
+
+footer {
+    padding: 1em;
+    width: 100%;
+    background-color: #1a1a1a; /* Dark background for footer */
+    text-align: left; /* Align text to the left */
+    border-top: 2px solid #ff0000; /* Neon red border */
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Align items at the ends */
+    align-items: center;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.social-links li {
+    margin-right: 1em;
+}
+
+p3 {
+    color: #ff0000; /* Change the color of the "Contact Me" text */
+    margin-left: 1em; /* Add spacing between "Contact Me" and links */
+    margin-bottom: 0; /* Remove bottom margin */
+}
+
+p2 {
+    color: #ff0000; /* Change the color of the copyright text */
+    margin-right: 1em; /* Push copyright text to the right */
+    margin-bottom: 0; /* Remove bottom margin */
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: none;
+    }
+    10% {
+        text-shadow: 2px 2px #ff0000, -2px -2px #FFFFFF, 0 0 5px #00ff00; /* Add additional color */
+    }
+    30% {
+        text-shadow: -2px -2px #ff0000, 2px 2px #FFFFFF, 0 0 5px #00ff00; /* Add additional color */
+    }
+    50% {
+        text-shadow: 2px -2px #ff0000, -2px 2px #FFFFFF, 0 0 5px #00ff00; /* Add additional color */
+    }
+    70% {
+        text-shadow: -2px 2px #ff0000, 2px -2px #FFFFFF, 0 0 5px #00ff00; /* Add additional color */
+    }
+    100% {
+        text-shadow: none;
+    }
+}
+
+h1 {
+    text-shadow: 0 0 5px #000000, 0 0 20px #000000, 0 0 30px #000000;
+    animation: glitch 2s infinite; /* Apply glitch animation with a slower speed */
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjust as needed */
+    gap: 20px; /* Adjust the gap between projects */
+}
+
+.project {
+    width: calc(20% - 20px); /* 20% width for each project with a gap of 20px */
+    margin-bottom: 20px; /* Adjust as needed */
+}
+
+.project img {
+    max-width: 100%;
+}
+/* Projects section styles */
+.project a {
+    color: #ff0000; /* Set link color to red */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.project a:hover {
+    color: #ffffff; /* Change link color to white on hover */
+}
+/* Social links styles */
+.social-links a {
+    color: #ff0000; /* Set link color to red */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.social-links a:hover {
+    color: #ffffff; /* Change link color to white on hover */
+}
