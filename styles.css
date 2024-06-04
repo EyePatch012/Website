@@ -185,26 +185,9 @@ h1 {
     text-decoration: none; /* Remove underline */
     transition: color 0.3s; /* Smooth transition for color change */
 }
-
 .project a:hover {
     color: #ffffff; /* Change link color to white on hover */
 }
-/* Social links styles */
-.social-links a {
-    color: #ff0000; /* Set link color to red */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s; /* Smooth transition for color change */
-}
-
-.social-links a:hover {
-    color: #ffffff; /* Change link color to white on hover */
-}
-.social-links img {
-    color: #ff0000; /* Set link color to red */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s; /* Smooth transition for color change */
-}
-
-.social-links img:hover {
-    color: #ffffff; /* Change link color to white on hover */
+.footer-container img:hover {
+    filter: brightness(5000) saturate(0%);
 }
