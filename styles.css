@@ -1,4 +1,3 @@
-```css
 @font-face {
     font-family: 'Transformers';
     src: url('F:/Website/transformers_movie.ttf') format('truetype');
@@ -12,7 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: visible; /* Visible overflow to Allow scroll bars */
+    overflow: visible; /* Visible overflow to allow scroll bars */
     position: relative; /* Position relative for pseudo-element */
 
     background-image: linear-gradient(#000000 2px, transparent 2px), 
@@ -37,17 +36,20 @@ header {
     background-color: #1a1a1a;
     text-align: right;
     border-bottom: 2px solid #ff0000;
-    position: relative;
+    position: fixed; /* Make the header fixed */
+    top: 0;
+    z-index: 10; /* Ensure the header is on top */
     animation: border-glitch 10s ease-in-out infinite alternate;
 }
 
 .top-right {
-    position: absolute;
-    top: -50px;
-    left: 50px;
+    position: fixed; /* Make the top-right section fixed */
+    top: -0.6em; /* Adjust as necessary */
+    left: 50px; /* Adjust as necessary */
     font-family: 'Transformers', sans-serif;
     color: #000000;
     font-size: 5em;
+    z-index: 15; /* Ensure the top-right section is on top */
 }
 
 nav ul {
@@ -77,6 +79,7 @@ section {
     max-width: 800px;
     border-bottom: 2px solid #ff0000;
     margin-bottom: 2em;
+    margin-top: 8em; /* Add margin to prevent content from being hidden under the fixed header */
 }
 
 .project {
@@ -217,6 +220,7 @@ footer {
         text-shadow: 2px 2px #ff0000, -2px -2px #ffffff, 0 0 5px #00ff00;
     }
 }
+
 @keyframes border-glitch {
     0% {
         border-color: #ff0000;
@@ -252,6 +256,7 @@ footer {
         border-color: #ff0000;
     }
 }
+
 h1 {
     text-shadow: 0 0 5px #000000, 0 0 20px #000000, 0 0 30px #000000;
     animation: glitch 10s ease-in-out infinite alternate;
