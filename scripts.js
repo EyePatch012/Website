@@ -116,7 +116,7 @@ const scatterContainer = document.createElement('div');
 scatterContainer.classList.add('background-scatter');
 document.body.appendChild(scatterContainer);
 
-const images = ['Images/sc1.png', 'Images/sc2.png', 'Images/sc3.png'];
+const images = ['Images/sc1.png', 'Images/sc2.png', 'Images/sc3.png', 'Images/0.png', 'Images/1.png'];
 const numScatters = 20;
 
 function getRandomDropShadow() {
