@@ -1,116 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ray</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ray</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
 </head>
 <body>
-    <header>
-        <h1 class="top-right">Ray</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="about">
-        <h2 class="text-white">About Me</h2>
-        <p>I am Ray, an enthusiastic gamer, digital artist, and game developer with a passion for creating games and producing digital art.</p>
+  <header>
+    <h1 class="top-right"id="typewriter">Ray</h1>
+    <nav aria-label="Primary navigation">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<main class="main-content">
+  <div class="about-skills-container">
+    <section id="about" class="about-me half-section">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <p>
+          I’m Ray, a passionate and versatile game developer, digital artist, and enthusiastic gamer. Currently studying Creative Media and Game Technology, I specialize in programming, level design, and creating immersive gameplay experiences using Unreal Engine 4/5. I enjoy blending fast-paced combat mechanics inspired by titles like Devil May Cry with rich environmental storytelling, and I’m always eager to explore new creative ideas—from concept art to character design and game mechanics.
+
+          My skills extend beyond coding to include digital art with tools like Photoshop and Blender, and I’m fluent in English and Bangla, which helps me communicate and collaborate effectively. I’m committed to continuously learning and growing in the game industry, with a focus on making engaging, fun, and visually appealing games.
+        </p>
+      </div>
+       <div class="about-photo-container">
+  <img src="images/ray-photo.jpg" alt="Static photo" class="about-photo static" />
+  <img src="images/kitty-transparent.gif" alt="Animated photo" class="about-photo gif" />
+</div>
+
     </section>
-    <section id="skills">
-        <h2 class="text-white">Skills</h2>
+
+<div class="background-scatter">
+  <img src="images/1.png" class="scatter-img" style="top: 10%; left: 20%" alt="Scatter Icon 1" />
+  <img src="images/2.png" class="scatter-img" style="top: 50%; left: 40%" alt="Scatter Icon 2" />
+  <img src="images/3.png" class="scatter-img" style="top: 80%; left: 75%" alt="Scatter Icon 3" />
+  <!-- Add more scatter images as needed -->
+</div>
+
+        </p>
+      </section>
+
+      <section id="skills" class="skills half-section">
+        <h2>Skills</h2>
         <div class="skill">
-            <h3>Language</h3>
-            <ul>
-                <li>C</li>
-                <li>C++</li>
-            </ul>
+          <h3>Language</h3>
+          <ul><li>C</li><li>C++</li><li>C#</li><li>Java</li></ul>
         </div>
         <div class="skill">
-            <h3>Engine</h3>
-            <ul>
-                <li>Unreal Engine 4/5</li>
-            </ul>
+          <h3>Engine</h3>
+          <ul><li>Unreal Engine 4/5</li></ul>
+          <ul><li>Unity Engine</li></ul>
         </div>
         <div class="skill">
-            <h3>Field</h3>
-            <ul>
-                <li>Level design</li>
-                <li>Programming</li>
-                <li>Character Design</li>
-                <li>Game Mechanics</li>
-                <li>Environment Art</li>
-                <li>Concept Art</li>
-            </ul>
+          <h3>Field</h3>
+          <ul>
+            <li>Level design</li>
+            <li>Programming</li>
+            <li>Character Design</li>
+            <li>Game Mechanics</li>
+            <li>Environment Art</li>
+            <li>Concept Art</li>
+          </ul>
         </div>
         <div class="skill">
-            <h3>Software</h3>
-            <ul>
-                <li>Photoshop</li>
-                <li>Blender</li>
-            </ul>
+          <h3>Software</h3>
+          <ul><li>Photoshop</li><li>Blender</li></ul>
         </div>
         <div class="skill">
-            <h3>Communication</h3>
-            <p>Fluency in reading, writing and speaking English and Bangla</p>
+          <h3>Communication</h3>
+          <p>Fluency in reading, writing and speaking English and Bangla</p>
         </div>
+      </section>
+    </div>
+
+    <section id="portfolio" class="projects-section">
+      <h2>My Projects</h2>
+      <div class="projects-container">
+        <div class="project">
+          <a href="https://eyepatch012.itch.io/neo-pulse" target="_blank" rel="noopener noreferrer">
+            <img src="Project Icons/NeoPulse.png" alt="Neo Pulse" />
+            <h3>Neo Pulse</h3>
+            <p>Sci-fi hack and slash Action</p>
+          </a>
+        </div>
+        <div class="project">
+          <a href="https://eyepatch012.itch.io/shadow-rupture" target="_blank" rel="noopener noreferrer">
+            <img src="Project Icons/ShadowRupture.png" alt="Shadow Rupture" />
+            <h3>Shadow Rupture</h3>
+            <p>Sci-fi hack and slash Action</p>
+          </a>
+        </div>
+        <div class="project">
+          <a href="https://eyepatch012.itch.io/rogers-adventure" target="_blank" rel="noopener noreferrer">
+            <img src="Project Icons/Roger'sAdventure.png" alt="Roger's Adventure" />
+            <h3>Roger's Adventure</h3>
+            <p>Fun side‑scroller Platformer</p>
+          </a>
+        </div>
+        <div class="project">
+          <a href="https://eyepatch012.itch.io/cyber-trap" target="_blank" rel="noopener noreferrer">
+            <img src="Project Icons/CyberTrap.png" alt="Cyber Trap" />
+            <h3>Cyber Trap</h3>
+            <p>Sci‑fi side‑scroller Platformer</p>
+          </a>
+        </div>
+      </div>
     </section>
-    <section id="portfolio">
-        <h2 class="text-white">My Projects</h2>
-        <div class="projects-container">
-            <div class="project">
-                <a href="https://eyepatch012.itch.io/neo-pulse"> <!-- Link to Project 1 page -->
-                    <img src="Project Icons/NeoPusle.png" alt="Neo Pulse">
-                    <h3>Neo Pulse</h3>
-                    <p>Sci-fi hack and slash Action</p>
-                </a>
-            </div>
-            <div class="project">
-                <a href="https://eyepatch012.itch.io/shadow-rupture"> <!-- Link to Project 2 page -->
-                    <img src="Project Icons/ShadowRupture.png" alt="Shadow Rupture">
-                    <h3>Shadow Rupture</h3>
-                    <p>Sci-fi hack and slash Action</p>
-                </a>
-            </div>
-            <div class="project">
-                <a href="https://eyepatch012.itch.io/rogers-adventure"> <!-- Link to Project 3 page -->
-                    <img src="Project Icons/Roger'sAdventure.png" alt="Roger's Adventure">
-                    <h3>Roger's Adventure</h3>
-                    <p>Fun side-scroller Platformer</p>
-                </a>
-            </div>
-            <div class="project">
-                <a href="https://eyepatch012.itch.io/cyber-trap"> <!-- Link to Project 4 page -->
-                    <img src="Project Icons/CyberTrap.png" alt="Cyber Trap">
-                    <h3>Cyber Trap</h3>
-                    <p>Sci-fi side-scroller Platformer</p>
-                </a>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <div class="footer-container">
-            <ul class="social-links">
-                <p2>Contact Me :&nbsp </p2>
-                <li><a href="https://x.com/EyePatch_012" target="_blank"><img src="Social Media Icons/twitter_6422210.png" alt="Twitter"></a></li>
-                <li><a href="https://linkedin.com/in/yourprofile" target="_blank"><img src="Social Media Icons/linkedin_3536569.png" alt="LinkedIn"></a></li>
-                <li><a href="https://github.com/EyePatch012" target="_blank"><img src="Social Media Icons/pngwing.com.png" alt="GitHub"></a></li>
-                <li><a href="https://www.instagram.com/eyepatch_012/" target="_blank"><img src="Social Media Icons/instagram_1384047.png" alt="Instagram"></a></li>
-            </ul>
-            <ul class="copyright">
-                <p2>2024 My Game Dev Portfolio</p2>
-            </ul>
-        </div>
-    </footer>
-    <script src="scripts.js"></script>
-    <video class="video-bg" autoplay muted loop style="opacity: 0.25;">
-        <source src="Portal.mp4">
-        Your browser does not support the video tag.
-    </video>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-contact">
+        <p>Contact Me:&nbsp;</p>
+        <ul class="social-links">
+          <li><a href="https://x.com/EyePatch_012" target="_blank" rel="noopener noreferrer"><img src="Social Media Icons/twitter_6422210.png" alt="Twitter" /></a></li>
+          <li><a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer"><img src="Social Media Icons/linkedin_3536569.png" alt="LinkedIn" /></a></li>
+          <li><a href="https://github.com/EyePatch012" target="_blank" rel="noopener noreferrer"><img src="Social Media Icons/pngwing.com.png" alt="GitHub" /></a></li>
+          <li><a href="https://www.instagram.com/eyepatch_012/" target="_blank" rel="noopener noreferrer"><img src="Social Media Icons/instagram_1384047.png" alt="Instagram" /></a></li>
+        </ul>
+      </div>
+      <div class="footer-copy">
+        <p>© 2024 My Game Dev Portfolio</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <!-- Remove or comment out video tag for no background video -->
+  <!-- <video class="video-bg" autoplay muted loop style="opacity: 0.25;">
+    <source src="Portal.mp4" />
+  </video> -->
 </body>
 </html>
