@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Art | Ray</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body class="project-page">
+  <div class="page-transition" aria-hidden="true">
+    <div class="transition-core">
+      <span class="transition-ring"></span>
+      <span class="transition-ring delay"></span>
+      <p>Rendering gallery...</p>
+    </div>
+  </div>
+  <header class="page-header reveal">
+    <h1 class="top-right" id="typewriter" data-text="Art">Art</h1>
+    <nav aria-label="Secondary navigation">
+      <ul class="breadcrumb-nav">
+        <li><a href="index.html#portfolio">← Back to Portfolio</a></li>
+        <li><a href="#art-list">Skip to gallery</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="background-scatter" aria-hidden="true"></div>
+
+  <main class="main-content" id="art-list">
+    <section class="work-index reveal">
+      <p class="eyebrow">Concept Lab</p>
+      <h2>Art, Motion, & Sketches</h2>
+      <p class="section-lede">
+        Drop your images into the <code>artworks</code> folder (JPG, PNG, or GIF). They’ll appear here automatically—no captions needed.
+      </p>
+      <div class="art-folder-note">
+        <p>
+          Current references look for files named <strong>piece-1</strong> through <strong>piece-6</strong>. Replace them with your own
+          art files to populate the grid.
+        </p>
+        <p class="tiny-note">You can add more by following the same naming pattern or by updating the list in <code>scripts.js</code>.</p>
+      </div>
+      <div class="art-gallery" id="art-gallery" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="footer-glow">
+    <div class="footer-container">
+      <div class="footer-contact">
+        <p>Want a print or animated loop?</p>
+        <a class="primary-btn" href="mailto:eyepatch012@gmail.com">Email Me</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
