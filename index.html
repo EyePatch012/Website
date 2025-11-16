@@ -12,6 +12,13 @@
   />
 </head>
 <body>
+  <div class="page-transition" aria-hidden="true">
+    <div class="transition-core">
+      <span class="transition-ring"></span>
+      <span class="transition-ring delay"></span>
+      <p>Booting sequence...</p>
+    </div>
+  </div>
   <header class="page-header reveal">
     <h1 class="top-right" id="typewriter" data-text="Ray">Ray</h1>
     <nav aria-label="Primary navigation">
@@ -78,65 +85,64 @@
     <section id="portfolio" class="projects-section reveal">
       <h2>My Projects</h2>
       <div class="projects-container">
-        <div class="project neon-card reveal-card">
-          <a href="neo-pulse.html">
-            <img src="Project Icons/NeoPulse.png" alt="Neo Pulse" />
-            <h3>Neo Pulse</h3>
-            <p>Sci-fi hack and slash Action</p>
-            <p>“Fully Self-Developed”</p>
-          </a>
-        </div>
-        <div class="project neon-card reveal-card">
-          <a href="shadow-rupture.html">
-            <img src="Project Icons/ShadowRupture.png" alt="Shadow Rupture" />
-            <h3>Shadow Rupture</h3>
-            <p>Sci-fi hack and slash Action</p>
-            <p>“Fully Self-Developed”</p>
-          </a>
-        </div>
-        <div class="project neon-card reveal-card">
-          <a href="rogers-adventure.html">
-            <img src="Project Icons/Roger'sAdventure.png" alt="Roger's Adventure" />
-            <h3>Roger's Adventure</h3>
-            <p>Fun side‑scroller Platformer</p>
-            <p>“Fully Self-Developed”</p>
-          </a>
-        </div>
-        <div class="project neon-card reveal-card">
-          <a href="cyber-trap.html">
-            <img src="Project Icons/CyberTrap.png" alt="Cyber Trap" />
-            <h3>Cyber Trap</h3>
-            <p>Sci‑fi side‑scroller Platformer</p>
-            <p>“Fully Self-Developed”</p>
-          </a>
-        </div>
+        <a class="project neon-card reveal-card" href="neo-pulse.html">
+          <img src="Project Icons/NeoPulse.png" alt="Neo Pulse" />
+          <h3>Neo Pulse</h3>
+          <p>Sci-fi hack and slash Action</p>
+          <p>“Fully Self-Developed”</p>
+        </a>
+        <a class="project neon-card reveal-card" href="shadow-rupture.html">
+          <img src="Project Icons/ShadowRupture.png" alt="Shadow Rupture" />
+          <h3>Shadow Rupture</h3>
+          <p>Sci-fi hack and slash Action</p>
+          <p>“Fully Self-Developed”</p>
+        </a>
+        <a class="project neon-card reveal-card" href="rogers-adventure.html">
+          <img src="Project Icons/Roger'sAdventure.png" alt="Roger's Adventure" />
+          <h3>Roger's Adventure</h3>
+          <p>Fun side‑scroller Platformer</p>
+          <p>“Fully Self-Developed”</p>
+        </a>
+        <a class="project neon-card reveal-card" href="cyber-trap.html">
+          <img src="Project Icons/CyberTrap.png" alt="Cyber Trap" />
+          <h3>Cyber Trap</h3>
+          <p>Sci‑fi side‑scroller Platformer</p>
+          <p>“Fully Self-Developed”</p>
+        </a>
       </div>
     </section>
 
     <section id="contact" class="contact-section reveal">
-      <h2>Contact Me</h2>
-      <p>
-        Whether you have a collaboration in mind or just want to talk shop about new mechanics, drop me a
-        message and I’ll reply as soon as I can.
-      </p>
-      <form class="contact-form" action="mailto:eyepatch012@gmail.com" method="post" enctype="text/plain">
-        <label>
-          Your Name
-          <input type="text" name="name" required placeholder="Player One" />
-        </label>
-        <label>
-          Your Email
-          <input type="email" name="email" required placeholder="you@example.com" />
-        </label>
-        <label>
-          Message
-          <textarea name="message" rows="4" required placeholder="Tell me about your idea..."></textarea>
-        </label>
-        <button type="submit" class="primary-btn">Send Email</button>
-      </form>
-      <p class="contact-alt">
-        Prefer your own mail client? <a href="mailto:eyepatch012@gmail.com">Email me directly.</a>
-      </p>
+      <div class="contact-header">
+        <h2>Contact Me</h2>
+        <button class="contact-toggle" type="button" aria-expanded="false" aria-controls="contact-panel">
+          Open communication link
+        </button>
+      </div>
+      <div id="contact-panel" class="contact-panel" aria-hidden="true">
+        <p>
+          Whether you have a collaboration in mind or just want to talk shop about new mechanics, drop me a
+          message and I’ll reply as soon as I can.
+        </p>
+        <form class="contact-form" action="mailto:eyepatch012@gmail.com" method="post" enctype="text/plain">
+          <label>
+            Your Name
+            <input type="text" name="name" required placeholder="Player One" />
+          </label>
+          <label>
+            Your Email
+            <input type="email" name="email" required placeholder="you@example.com" />
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="4" required placeholder="Tell me about your idea..."></textarea>
+          </label>
+          <button type="submit" class="primary-btn">Send Email</button>
+        </form>
+        <p class="contact-alt">
+          Prefer your own mail client? <a href="mailto:eyepatch012@gmail.com">Email me directly.</a>
+        </p>
+      </div>
     </section>
   </main>
 

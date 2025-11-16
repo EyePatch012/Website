@@ -234,6 +234,8 @@ h2 {
 }
 
 .project {
+  display: flex;
+  flex-direction: column;
   background-color: rgba(29, 29, 29, 0.92);
   border-radius: 18px;
   width: 240px;
@@ -241,6 +243,8 @@ h2 {
   transition: transform 0.5s ease, box-shadow 0.5s ease;
   overflow: hidden;
   position: relative;
+  color: inherit;
+  text-decoration: none;
 }
 
 .project::before {
@@ -281,6 +285,11 @@ h2 {
   margin: 0 1rem 1rem;
   font-size: 0.9rem;
   color: #bbb;
+}
+
+.project:focus-visible {
+  outline: 3px solid rgba(97, 218, 251, 0.7);
+  outline-offset: 4px;
 }
 
 /* Project Detail Pages */
@@ -396,6 +405,7 @@ h2 {
   color: #555;
 }
 
+
 .contact-section {
   margin-top: 3rem;
   background: linear-gradient(150deg, rgba(16, 16, 16, 0.95), rgba(30, 30, 30, 0.85));
@@ -403,10 +413,58 @@ h2 {
   border-radius: 22px;
   border: 1px solid rgba(97, 218, 251, 0.2);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+}
+
+.contact-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-toggle {
+  background: rgba(97, 218, 251, 0.15);
+  border: 1px solid rgba(97, 218, 251, 0.5);
+  color: #fff;
+  padding: 0.65rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background 0.3s ease, border 0.3s ease, transform 0.3s ease;
+}
+
+.contact-toggle:hover,
+.contact-toggle:focus-visible,
+.contact-section.contact-open .contact-toggle {
+  background: rgba(255, 110, 199, 0.2);
+  border-color: rgba(255, 110, 199, 0.7);
+  transform: translateY(-2px);
+}
+
+.contact-panel {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+body.js-enabled .contact-panel {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: max-height 0.6s ease, opacity 0.6s ease, transform 0.6s ease;
+}
+
+body.js-enabled .contact-section.contact-open .contact-panel {
+  max-height: 1200px;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .contact-form {
-  margin-top: 1.25rem;
   display: grid;
   gap: 1rem;
 }
@@ -478,6 +536,71 @@ h2 {
 
   .breadcrumb-nav {
     flex-wrap: wrap;
+  }
+
+  .contact-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Page transition overlay */
+.page-transition {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(17, 19, 27, 0.95), rgba(4, 4, 6, 0.98));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.page-transition.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.transition-core {
+  position: relative;
+  text-align: center;
+  color: #61dafb;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.transition-ring {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 2px solid rgba(97, 218, 251, 0.4);
+  animation: ringPulse 1.8s linear infinite;
+}
+
+.transition-ring.delay {
+  animation-delay: 0.6s;
+}
+
+.transition-core p {
+  font-size: 1rem;
+  letter-spacing: 0.4em;
+  color: #fff;
+  margin-top: 200px;
+}
+
+@keyframes ringPulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.6;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
   }
 }
 /* Cursor Trail Styles */

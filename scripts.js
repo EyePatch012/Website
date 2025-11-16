@@ -1,6 +1,10 @@
 const trailCount = 10;
 const trailElements = [];
 
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.classList.add('js-enabled');
+});
+
 function getRandomBrightColor() {
   const hue = Math.floor(Math.random() * 360);
   const saturation = 80 + Math.random() * 20;
@@ -210,6 +214,8 @@ window.addEventListener('load', () => {
   initRevealAnimations();
   initHeaderScrollEffect();
   initAquariumIcons();
+  initContactToggle();
+  initPageTransitions();
 });
 
 function initRevealAnimations() {
@@ -251,4 +257,71 @@ function initHeaderScrollEffect() {
 
   window.addEventListener('scroll', toggleHeaderState, { passive: true });
   toggleHeaderState();
+}
+
+function initContactToggle() {
+  const contactSection = document.querySelector('.contact-section');
+  if (!contactSection) return;
+
+  const toggleButton = contactSection.querySelector('.contact-toggle');
+  const panel = contactSection.querySelector('.contact-panel');
+  if (!toggleButton || !panel) return;
+
+  const setExpanded = expanded => {
+    toggleButton.setAttribute('aria-expanded', expanded);
+    panel.setAttribute('aria-hidden', !expanded);
+    contactSection.classList.toggle('contact-open', expanded);
+    toggleButton.textContent = expanded ? 'Close communication link' : 'Open communication link';
+  };
+
+  setExpanded(false);
+
+  toggleButton.addEventListener('click', () => {
+    const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+    setExpanded(!isExpanded);
+  });
+
+  if (window.location.hash === '#contact') {
+    setExpanded(true);
+  }
+
+  document.querySelectorAll('a[href="#contact"]').forEach(link => {
+    link.addEventListener('click', () => setTimeout(() => setExpanded(true), 250));
+  });
+}
+
+function initPageTransitions() {
+  const overlay = document.querySelector('.page-transition');
+  if (!overlay) return;
+
+  const hideOverlay = () => overlay.classList.add('is-hidden');
+  const showOverlay = () => overlay.classList.remove('is-hidden');
+
+  setTimeout(hideOverlay, 400);
+  window.addEventListener('pageshow', () => hideOverlay());
+
+  const links = document.querySelectorAll('a[href]');
+  links.forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+    if (link.target === '_blank') return;
+
+    let url;
+    try {
+      url = new URL(href, window.location.href);
+    } catch (error) {
+      return;
+    }
+
+    if (url.origin !== window.location.origin) return;
+
+    link.addEventListener('click', event => {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      showOverlay();
+      setTimeout(() => {
+        window.location.href = url.href;
+      }, 450);
+    });
+  });
 }
