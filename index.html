@@ -13,15 +13,18 @@
 </head>
 <body>
   <header class="page-header reveal">
-    <h1 class="top-right"id="typewriter">Ray</h1>
+    <h1 class="top-right" id="typewriter" data-text="Ray">Ray</h1>
     <nav aria-label="Primary navigation">
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
+
+  <div class="background-scatter" aria-hidden="true"></div>
 
 <main class="main-content">
   <div class="about-skills-container">
@@ -38,18 +41,6 @@
 </div>
 
     </section>
-
-<div class="background-scatter">
-  <img src="Images/sc1.png" class="scatter-img" style="top: 10%; left: 20%" alt="Scatter Icon 1" />
-  <img src="Images/sc2.png" class="scatter-img" style="top: 50%; left: 40%" alt="Scatter Icon 2" />
-  <img src="Images/sc3.png" class="scatter-img" style="top: 80%; left: 75%" alt="Scatter Icon 3" />
-  <img src="Images/0.png" class="scatter-img" style="top: 80%; left: 75%" alt="Scatter Icon 3" />
-  <img src="Images/1.png" class="scatter-img" style="top: 80%; left: 75%" alt="Scatter Icon 3" />
-  <!-- Add more scatter images as needed -->
-</div>
-
-        </p>
-      </section>
 
       <section id="skills" class="skills half-section reveal">
         <h2>Skills</h2>
@@ -88,7 +79,7 @@
       <h2>My Projects</h2>
       <div class="projects-container">
         <div class="project neon-card reveal-card">
-          <a href="https://eyepatch012.itch.io/neo-pulse" target="_blank" rel="noopener noreferrer">
+          <a href="neo-pulse.html">
             <img src="Project Icons/NeoPulse.png" alt="Neo Pulse" />
             <h3>Neo Pulse</h3>
             <p>Sci-fi hack and slash Action</p>
@@ -96,7 +87,7 @@
           </a>
         </div>
         <div class="project neon-card reveal-card">
-          <a href="https://eyepatch012.itch.io/shadow-rupture" target="_blank" rel="noopener noreferrer">
+          <a href="shadow-rupture.html">
             <img src="Project Icons/ShadowRupture.png" alt="Shadow Rupture" />
             <h3>Shadow Rupture</h3>
             <p>Sci-fi hack and slash Action</p>
@@ -104,7 +95,7 @@
           </a>
         </div>
         <div class="project neon-card reveal-card">
-          <a href="https://eyepatch012.itch.io/rogers-adventure" target="_blank" rel="noopener noreferrer">
+          <a href="rogers-adventure.html">
             <img src="Project Icons/Roger'sAdventure.png" alt="Roger's Adventure" />
             <h3>Roger's Adventure</h3>
             <p>Fun side‑scroller Platformer</p>
@@ -112,7 +103,7 @@
           </a>
         </div>
         <div class="project neon-card reveal-card">
-          <a href="https://eyepatch012.itch.io/cyber-trap" target="_blank" rel="noopener noreferrer">
+          <a href="cyber-trap.html">
             <img src="Project Icons/CyberTrap.png" alt="Cyber Trap" />
             <h3>Cyber Trap</h3>
             <p>Sci‑fi side‑scroller Platformer</p>
@@ -120,6 +111,32 @@
           </a>
         </div>
       </div>
+    </section>
+
+    <section id="contact" class="contact-section reveal">
+      <h2>Contact Me</h2>
+      <p>
+        Whether you have a collaboration in mind or just want to talk shop about new mechanics, drop me a
+        message and I’ll reply as soon as I can.
+      </p>
+      <form class="contact-form" action="mailto:eyepatch012@gmail.com" method="post" enctype="text/plain">
+        <label>
+          Your Name
+          <input type="text" name="name" required placeholder="Player One" />
+        </label>
+        <label>
+          Your Email
+          <input type="email" name="email" required placeholder="you@example.com" />
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="4" required placeholder="Tell me about your idea..."></textarea>
+        </label>
+        <button type="submit" class="primary-btn">Send Email</button>
+      </form>
+      <p class="contact-alt">
+        Prefer your own mail client? <a href="mailto:eyepatch012@gmail.com">Email me directly.</a>
+      </p>
     </section>
   </main>
 

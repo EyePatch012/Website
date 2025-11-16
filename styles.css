@@ -42,6 +42,48 @@ a {
   transition: color 0.3s ease;
 }
 
+.primary-btn,
+.ghost-btn,
+button.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.primary-btn {
+  background: linear-gradient(120deg, #21a1f1, #ff6ec7);
+  color: #0a0a0a;
+  box-shadow: 0 8px 20px rgba(33, 161, 241, 0.35);
+}
+
+.primary-btn:hover,
+.primary-btn:focus-visible {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 14px 30px rgba(255, 110, 199, 0.35);
+}
+
+.ghost-btn {
+  background: transparent;
+  border-color: rgba(97, 218, 251, 0.5);
+  color: #61dafb;
+}
+
+.ghost-btn:hover,
+.ghost-btn:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(255, 110, 199, 0.7);
+  color: #ff6ec7;
+}
+
 a:hover {
   color: #21a1f1;
 }
@@ -241,6 +283,62 @@ h2 {
   color: #bbb;
 }
 
+/* Project Detail Pages */
+.project-page .main-content {
+  max-width: 900px;
+}
+
+.project-detail {
+  display: flex;
+  gap: 2rem;
+  background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(34, 34, 34, 0.85));
+  padding: 2rem;
+  border-radius: 24px;
+  border: 1px solid rgba(97, 218, 251, 0.2);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+  flex-wrap: wrap;
+}
+
+.project-cover {
+  width: 260px;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+}
+
+.project-copy {
+  flex: 1 1 300px;
+}
+
+.project-highlights {
+  margin: 1rem 0 1.5rem;
+  padding-left: 1.2rem;
+  color: #cfd8dc;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.project-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.breadcrumb-nav {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.breadcrumb-nav a {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.breadcrumb-nav a:hover,
+.breadcrumb-nav a:focus-visible {
+  color: #fff;
+}
+
 /* Footer */
 .footer-glow {
   background: rgba(13, 13, 13, 0.9);
@@ -298,6 +396,65 @@ h2 {
   color: #555;
 }
 
+.contact-section {
+  margin-top: 3rem;
+  background: linear-gradient(150deg, rgba(16, 16, 16, 0.95), rgba(30, 30, 30, 0.85));
+  padding: 2rem;
+  border-radius: 22px;
+  border: 1px solid rgba(97, 218, 251, 0.2);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+}
+
+.contact-form {
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-weight: 600;
+  color: #9fd0ff;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: rgba(8, 8, 8, 0.8);
+  border: 1px solid rgba(97, 218, 251, 0.2);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  color: #fff;
+  font-family: inherit;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: rgba(255, 110, 199, 0.65);
+  box-shadow: 0 0 0 3px rgba(33, 161, 241, 0.25);
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  justify-self: flex-start;
+}
+
+.contact-alt {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #bbb;
+}
+
+.contact-alt a {
+  color: #ff6ec7;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .about-skills-container {
@@ -307,6 +464,20 @@ h2 {
   .footer-container {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .project-detail {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .project-cta {
+    justify-content: center;
+  }
+
+  .breadcrumb-nav {
+    flex-wrap: wrap;
   }
 }
 /* Cursor Trail Styles */
@@ -423,8 +594,20 @@ body {
   opacity: 0.6;
   user-select: none;
   will-change: transform, filter;
-  animation: floatAround 5s ease-in-out infinite;
-  transition: filter 2s ease;
+  animation: floatAround 8s ease-in-out infinite;
+  transition: filter 2s ease, transform 0.6s ease;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.scatter-img:focus-visible {
+  outline: 2px solid #61dafb;
+  outline-offset: 4px;
+}
+
+.scatter-img.is-darting {
+  transition: top 0.9s cubic-bezier(0.23, 1, 0.32, 1), left 0.9s cubic-bezier(0.23, 1, 0.32, 1),
+    transform 0.6s ease;
 }
 
 /* Make your content appear above scatter images */
