@@ -215,6 +215,7 @@ window.addEventListener('load', () => {
   initHeaderScrollEffect();
   initAquariumIcons();
   initContactToggle();
+  initArtGallery();
   initOrbitRotators();
   initPageTransitions();
 });
@@ -289,6 +290,34 @@ function initContactToggle() {
   document.querySelectorAll('a[href="#contact"]').forEach(link => {
     link.addEventListener('click', () => setTimeout(() => setExpanded(true), 250));
   });
+}
+
+function initArtGallery() {
+  const gallery = document.getElementById('art-gallery');
+  if (!gallery) return;
+
+  const artFiles = ['piece-1.jpg', 'piece-2.jpg', 'piece-3.jpg', 'piece-4.jpg', 'piece-5.jpg', 'piece-6.jpg'];
+  const fragment = document.createDocumentFragment();
+
+  artFiles.forEach((file, index) => {
+    const frame = document.createElement('figure');
+    frame.className = 'art-frame';
+
+    const img = document.createElement('img');
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    img.src = `artworks/${file}`;
+    img.alt = `Art piece ${index + 1}`;
+    img.addEventListener('error', () => {
+      frame.classList.add('art-missing');
+      frame.innerHTML = `<div class="art-placeholder">Add <code>${file}</code> to the artworks folder.</div>`;
+    }, { once: true });
+
+    frame.appendChild(img);
+    fragment.appendChild(frame);
+  });
+
+  gallery.appendChild(fragment);
 }
 
 function initOrbitRotators() {
