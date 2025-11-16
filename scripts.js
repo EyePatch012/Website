@@ -306,7 +306,7 @@ function initArtGallery() {
     const img = document.createElement('img');
     img.loading = 'lazy';
     img.decoding = 'async';
-    img.src = `artworks/${file}`;
+    img.src = `Artworks/${file}`;
     img.alt = `Art piece ${index + 1}`;
     img.addEventListener('error', () => {
       frame.classList.add('art-missing');
