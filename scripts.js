@@ -105,10 +105,15 @@ function typeWriter() {
   }
 }
 
-window.onload = () => {
-  document.getElementById("typewriter").innerHTML = "";
-  typeWriter();
-};
+window.addEventListener('load', () => {
+  const typewriterTarget = document.getElementById('typewriter');
+  if (typewriterTarget) {
+    typewriterTarget.innerHTML = '';
+    typeWriter();
+  }
+  initRevealAnimations();
+  initHeaderScrollEffect();
+});
 
 
 // Scatter images setup
@@ -156,3 +161,44 @@ setInterval(() => {
     applyRandomGlow(img);
   });
 }, 3000);
+
+function initRevealAnimations() {
+  const revealTargets = document.querySelectorAll('.reveal, .reveal-card');
+  if (!revealTargets.length) return;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (prefersReducedMotion.matches) {
+    revealTargets.forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.2,
+    rootMargin: '0px 0px -10% 0px'
+  });
+
+  revealTargets.forEach(target => observer.observe(target));
+}
+
+function initHeaderScrollEffect() {
+  const header = document.querySelector('.page-header');
+  if (!header) return;
+
+  const toggleHeaderState = () => {
+    if (window.scrollY > 30) {
+      header.classList.add('header-scrolled');
+    } else {
+      header.classList.remove('header-scrolled');
+    }
+  };
+
+  window.addEventListener('scroll', toggleHeaderState, { passive: true });
+  toggleHeaderState();
+}
