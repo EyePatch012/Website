@@ -215,6 +215,7 @@ window.addEventListener('load', () => {
   initHeaderScrollEffect();
   initAquariumIcons();
   initContactToggle();
+  initOrbitRotators();
   initPageTransitions();
 });
 
@@ -287,6 +288,47 @@ function initContactToggle() {
 
   document.querySelectorAll('a[href="#contact"]').forEach(link => {
     link.addEventListener('click', () => setTimeout(() => setExpanded(true), 250));
+  });
+}
+
+function initOrbitRotators() {
+  const tracks = document.querySelectorAll('.orbit-track');
+  if (!tracks.length) return;
+
+  tracks.forEach(track => {
+    const cards = Array.from(track.querySelectorAll('.orbit-card'));
+    if (cards.length === 0) return;
+
+    let index = 0;
+    const rotationMs = 3600;
+    const activate = idx => cards.forEach((card, cardIndex) => card.classList.toggle('is-active', idx === cardIndex));
+    activate(index);
+
+    let timer = setInterval(() => {
+      index = (index + 1) % cards.length;
+      activate(index);
+    }, rotationMs);
+
+    const stop = () => {
+      clearInterval(timer);
+      timer = null;
+    };
+
+    const start = () => {
+      if (timer) return;
+      timer = setInterval(() => {
+        index = (index + 1) % cards.length;
+        activate(index);
+      }, rotationMs);
+    };
+
+    track.addEventListener('mouseenter', stop);
+    track.addEventListener('mouseleave', start);
+
+    cards.forEach(card => {
+      card.addEventListener('focusin', stop);
+      card.addEventListener('focusout', start);
+    });
   });
 }
 
