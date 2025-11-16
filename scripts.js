@@ -299,27 +299,35 @@ function initOrbitRotators() {
     const cards = Array.from(track.querySelectorAll('.orbit-card'));
     if (cards.length === 0) return;
 
-    let index = 0;
-    const rotationMs = 3600;
+    let index = Math.floor(Math.random() * cards.length);
+    const rotationMs = 4200;
     const activate = idx => cards.forEach((card, cardIndex) => card.classList.toggle('is-active', idx === cardIndex));
     activate(index);
 
-    let timer = setInterval(() => {
-      index = (index + 1) % cards.length;
+    const pickRandom = () => {
+      if (track.classList.contains('is-expanded')) return;
+      let next = Math.floor(Math.random() * cards.length);
+      if (cards.length > 1) {
+        while (next === index) {
+          next = Math.floor(Math.random() * cards.length);
+        }
+      }
+      index = next;
       activate(index);
-    }, rotationMs);
+    };
+
+    let timer = setInterval(pickRandom, rotationMs);
 
     const stop = () => {
-      clearInterval(timer);
-      timer = null;
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
     };
 
     const start = () => {
-      if (timer) return;
-      timer = setInterval(() => {
-        index = (index + 1) % cards.length;
-        activate(index);
-      }, rotationMs);
+      if (timer || track.classList.contains('is-expanded')) return;
+      timer = setInterval(pickRandom, rotationMs);
     };
 
     track.addEventListener('mouseenter', stop);
@@ -328,6 +336,27 @@ function initOrbitRotators() {
     cards.forEach(card => {
       card.addEventListener('focusin', stop);
       card.addEventListener('focusout', start);
+    });
+
+    const expandButton = track.closest('.orbit-row')?.querySelector('.row-expand');
+    const setExpanded = expanded => {
+      track.classList.toggle('is-expanded', expanded);
+      expandButton?.setAttribute('aria-expanded', expanded);
+      if (expandButton) {
+        expandButton.textContent = expanded ? 'Collapse' : 'Expand';
+      }
+      if (expanded) {
+        stop();
+        cards.forEach(card => card.classList.add('is-active'));
+      } else {
+        cards.forEach((card, cardIndex) => card.classList.toggle('is-active', cardIndex === index));
+        start();
+      }
+    };
+
+    expandButton?.addEventListener('click', () => {
+      const expanded = expandButton.getAttribute('aria-expanded') === 'true';
+      setExpanded(!expanded);
     });
   });
 }

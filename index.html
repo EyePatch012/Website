@@ -97,10 +97,15 @@
       <div class="orbit-grid">
         <article class="orbit-row reveal-card" aria-label="Featured games">
           <div class="orbit-row-header">
-            <a class="row-link" href="projects.html">Projects</a>
-            <span class="row-sub">Playable builds and prototypes</span>
+            <div class="row-info">
+              <a class="row-link" href="projects.html">Projects</a>
+              <span class="row-sub">Playable builds and prototypes</span>
+            </div>
+            <button class="row-expand" type="button" aria-expanded="false" aria-controls="projects-track">
+              Expand
+            </button>
           </div>
-          <div class="orbit-track" data-rotation="projects">
+          <div class="orbit-track" id="projects-track" data-rotation="projects">
             <a class="orbit-card" href="neo-pulse.html">
               <img src="Project Icons/NeoPulse.png" alt="Neo Pulse" />
               <div class="orbit-copy">
@@ -134,10 +139,15 @@
 
         <article class="orbit-row reveal-card" aria-label="Featured mods">
           <div class="orbit-row-header">
-            <a class="row-link" href="mods.html">Mods</a>
-            <span class="row-sub">Gameplay twists and community collabs</span>
+            <div class="row-info">
+              <a class="row-link" href="mods.html">Mods</a>
+              <span class="row-sub">Gameplay twists and community collabs</span>
+            </div>
+            <button class="row-expand" type="button" aria-expanded="false" aria-controls="mods-track">
+              Expand
+            </button>
           </div>
-          <div class="orbit-track" data-rotation="mods">
+          <div class="orbit-track" id="mods-track" data-rotation="mods">
             <a class="orbit-card" href="mods.html#rift-overdrive">
               <span class="orbit-thumb" aria-hidden="true"></span>
               <div class="orbit-copy">
@@ -164,10 +174,15 @@
 
         <article class="orbit-row reveal-card" aria-label="Featured art">
           <div class="orbit-row-header">
-            <a class="row-link" href="art.html">Art</a>
-            <span class="row-sub">Concepts, key art, and motion studies</span>
+            <div class="row-info">
+              <a class="row-link" href="art.html">Art</a>
+              <span class="row-sub">Concepts, key art, and motion studies</span>
+            </div>
+            <button class="row-expand" type="button" aria-expanded="false" aria-controls="art-track">
+              Expand
+            </button>
           </div>
-          <div class="orbit-track" data-rotation="art">
+          <div class="orbit-track" id="art-track" data-rotation="art">
             <a class="orbit-card" href="art.html#cyber-portrait">
               <img src="Images/ray-photo.jpg" alt="Cyber portrait concept" />
               <div class="orbit-copy">
