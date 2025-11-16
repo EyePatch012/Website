@@ -296,7 +296,7 @@ function initArtGallery() {
   const gallery = document.getElementById('art-gallery');
   if (!gallery) return;
 
-  const artFiles = ['piece-1.jpg', 'piece-2.jpg', 'piece-3.jpg', 'piece-4.jpg', 'piece-5.jpg', 'piece-6.jpg'];
+    const artFiles = ['piece-1.jpg', 'piece-2.jpg', 'piece-3.jpg', 'piece-4.jpg', 'piece-5.jpg', 'piece-6.jpg', 'piece-7.jpg'];
   const fragment = document.createDocumentFragment();
 
   artFiles.forEach((file, index) => {
