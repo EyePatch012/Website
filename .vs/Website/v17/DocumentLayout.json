@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\snipe\\Documents\\GitHub\\Website\\rpg-dragon-combat.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:rpg-dragon-combat.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\snipe\\Documents\\GitHub\\Website\\shadow-rupture.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:shadow-rupture.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\snipe\\Documents\\GitHub\\Website\\cyber-trap.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cyber-trap.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\snipe\\Documents\\GitHub\\Website\\rogers-adventure.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:rogers-adventure.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\snipe\\Documents\\GitHub\\Website\\neo-pulse.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:neo-pulse.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\snipe\\Documents\\GitHub\\Website\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\snipe\\Documents\\GitHub\\Website\\mods.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:mods.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\snipe\\Documents\\GitHub\\Website\\scripts.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scripts.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\snipe\\Documents\\GitHub\\Website\\art.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:art.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,56 +34,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "scripts.js",
-              "DocumentMoniker": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\scripts.js",
-              "RelativeDocumentMoniker": "scripts.js",
-              "ToolTip": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\scripts.js",
-              "RelativeToolTip": "scripts.js",
-              "ViewState": "AgIAACABAAAAAAAAAAAAADIBAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-16T22:14:39.219Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "art.html",
-              "DocumentMoniker": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\art.html",
-              "RelativeDocumentMoniker": "art.html",
-              "ToolTip": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\art.html",
-              "RelativeToolTip": "art.html",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACYAAAAKAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "rpg-dragon-combat.html",
+              "DocumentMoniker": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\rpg-dragon-combat.html",
+              "RelativeDocumentMoniker": "rpg-dragon-combat.html",
+              "ToolTip": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\rpg-dragon-combat.html",
+              "RelativeToolTip": "rpg-dragon-combat.html",
+              "ViewState": "AgIAACkAAAAAAAAAAAAYwFMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-11-16T22:00:01.491Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "mods.html",
-              "DocumentMoniker": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\mods.html",
-              "RelativeDocumentMoniker": "mods.html",
-              "ToolTip": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\mods.html",
-              "RelativeToolTip": "mods.html",
-              "ViewState": "AgIAABQAAAAAAAAAAAAYwCsAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-11-16T21:57:08.424Z",
+              "WhenOpened": "2025-11-19T16:12:42.827Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "cyber-trap.html",
+              "DocumentMoniker": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\cyber-trap.html",
+              "RelativeDocumentMoniker": "cyber-trap.html",
+              "ToolTip": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\cyber-trap.html",
+              "RelativeToolTip": "cyber-trap.html",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAC4AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-11-19T16:09:27.557Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "rogers-adventure.html",
+              "DocumentMoniker": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\rogers-adventure.html",
+              "RelativeDocumentMoniker": "rogers-adventure.html",
+              "ToolTip": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\rogers-adventure.html",
+              "RelativeToolTip": "rogers-adventure.html",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACoAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-11-19T16:07:34.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "shadow-rupture.html",
+              "DocumentMoniker": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\shadow-rupture.html",
+              "RelativeDocumentMoniker": "shadow-rupture.html",
+              "ToolTip": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\shadow-rupture.html",
+              "RelativeToolTip": "shadow-rupture.html",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAACsAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-11-19T16:05:17.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "neo-pulse.html",
+              "DocumentMoniker": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\neo-pulse.html",
+              "RelativeDocumentMoniker": "neo-pulse.html",
+              "ToolTip": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\neo-pulse.html",
+              "RelativeToolTip": "neo-pulse.html",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAADAAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-11-19T16:02:59.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\index.html",
               "RelativeDocumentMoniker": "index.html",
               "ToolTip": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\index.html",
               "RelativeToolTip": "index.html",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAYwE4AAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAMYAAAAAAAAAAAAAACoAAABZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-11-16T21:53:32.443Z",
+              "WhenOpened": "2025-11-19T16:02:03.13Z",
               "EditorCaption": ""
             }
           ]

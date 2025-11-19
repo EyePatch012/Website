@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\snipe\\Documents\\GitHub\\Website\\mods.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:mods.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\snipe\\Documents\\GitHub\\Website\\projects.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:projects.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\snipe\\Documents\\GitHub\\Website\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\snipe\\Documents\\GitHub\\Website\\ue-building-placement.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ue-building-placement.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\snipe\\Documents\\GitHub\\Website\\scripts.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:scripts.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\snipe\\Documents\\GitHub\\Website\\ue-animation-systems.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:ue-animation-systems.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\snipe\\Documents\\GitHub\\Website\\art.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:art.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\snipe\\Documents\\GitHub\\Website\\trading-system.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:trading-system.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\snipe\\Documents\\GitHub\\Website\\rpg-dragon-combat.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:rpg-dragon-combat.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\snipe\\Documents\\GitHub\\Website\\rope-movement.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:rope-movement.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\snipe\\Documents\\GitHub\\Website\\party-game.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:party-game.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,57 +38,97 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ue-building-placement.html",
+              "DocumentMoniker": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\ue-building-placement.html",
+              "RelativeDocumentMoniker": "ue-building-placement.html",
+              "ToolTip": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\ue-building-placement.html",
+              "RelativeToolTip": "ue-building-placement.html",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAADIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-11-19T05:47:37.957Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "scripts.js",
-              "DocumentMoniker": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\scripts.js",
-              "RelativeDocumentMoniker": "scripts.js",
-              "ToolTip": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\scripts.js",
-              "RelativeToolTip": "scripts.js",
-              "ViewState": "AgIAACABAAAAAAAAAAAAADIBAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-16T22:14:39.219Z",
+              "Title": "ue-animation-systems.html",
+              "DocumentMoniker": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\ue-animation-systems.html",
+              "RelativeDocumentMoniker": "ue-animation-systems.html",
+              "ToolTip": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\ue-animation-systems.html",
+              "RelativeToolTip": "ue-animation-systems.html",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAADIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-11-19T05:45:43.198Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "art.html",
-              "DocumentMoniker": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\art.html",
-              "RelativeDocumentMoniker": "art.html",
-              "ToolTip": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\art.html",
-              "RelativeToolTip": "art.html",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACYAAAAKAAAAAAAAAA==",
+              "Title": "trading-system.html",
+              "DocumentMoniker": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\trading-system.html",
+              "RelativeDocumentMoniker": "trading-system.html",
+              "ToolTip": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\trading-system.html",
+              "RelativeToolTip": "trading-system.html",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAADMAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-11-16T22:00:01.491Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "mods.html",
-              "DocumentMoniker": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\mods.html",
-              "RelativeDocumentMoniker": "mods.html",
-              "ToolTip": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\mods.html",
-              "RelativeToolTip": "mods.html",
-              "ViewState": "AgIAABQAAAAAAAAAAAAYwCsAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-11-16T21:57:08.424Z",
+              "WhenOpened": "2025-11-19T05:43:07.229Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "index.html",
-              "DocumentMoniker": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\index.html",
-              "RelativeDocumentMoniker": "index.html",
-              "ToolTip": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\index.html",
-              "RelativeToolTip": "index.html",
-              "ViewState": "AgIAAJAAAAAAAAAAAAAYwKsAAABFAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "rpg-dragon-combat.html",
+              "DocumentMoniker": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\rpg-dragon-combat.html",
+              "RelativeDocumentMoniker": "rpg-dragon-combat.html",
+              "ToolTip": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\rpg-dragon-combat.html",
+              "RelativeToolTip": "rpg-dragon-combat.html",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAADIAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-11-16T21:53:32.443Z",
+              "WhenOpened": "2025-11-19T05:41:15.178Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "rope-movement.html",
+              "DocumentMoniker": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\rope-movement.html",
+              "RelativeDocumentMoniker": "rope-movement.html",
+              "ToolTip": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\rope-movement.html",
+              "RelativeToolTip": "rope-movement.html",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAADIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-11-19T05:39:11.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "projects.html",
+              "DocumentMoniker": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\projects.html",
+              "RelativeDocumentMoniker": "projects.html",
+              "ToolTip": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\projects.html",
+              "RelativeToolTip": "projects.html",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAAAJUAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-11-19T05:35:30.924Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "party-game.html",
+              "DocumentMoniker": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\party-game.html",
+              "RelativeDocumentMoniker": "party-game.html",
+              "ToolTip": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\party-game.html",
+              "RelativeToolTip": "party-game.html",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAADIAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-11-19T05:33:03.232Z",
               "EditorCaption": ""
             }
           ]
