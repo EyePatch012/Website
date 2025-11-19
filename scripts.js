@@ -296,28 +296,108 @@ function initArtGallery() {
   const gallery = document.getElementById('art-gallery');
   if (!gallery) return;
 
-    const artFiles = ['piece-1.jpg', 'piece-2.jpg', 'piece-3.jpg', 'piece-4.jpg', 'piece-5.jpg', 'piece-6.jpg', 'piece-7.jpg'];
+  const artFiles = ['piece-1.jpg', 'piece-2.jpg', 'piece-3.jpg', 'piece-4.jpg', 'piece-5.jpg', 'piece-6.jpg', 'piece-7.jpg'];
   const fragment = document.createDocumentFragment();
+
+  const lightbox = createLightbox();
+  const openLightbox = (src, alt) => {
+    lightbox.image.src = src;
+    lightbox.image.alt = alt;
+    lightbox.root.classList.add('is-open');
+    lightbox.root.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('lightbox-open');
+    lightbox.closeButton.focus();
+  };
+
+  const closeLightbox = () => {
+    lightbox.root.classList.remove('is-open');
+    lightbox.root.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('lightbox-open');
+    lightbox.image.src = '';
+  };
+
+  lightbox.closeButton.addEventListener('click', closeLightbox);
+  lightbox.root.addEventListener('click', event => {
+    if (event.target === lightbox.root) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && lightbox.root.classList.contains('is-open')) {
+      closeLightbox();
+    }
+  });
 
   artFiles.forEach((file, index) => {
     const frame = document.createElement('figure');
     frame.className = 'art-frame';
+    frame.tabIndex = 0;
 
     const img = document.createElement('img');
     img.loading = 'lazy';
     img.decoding = 'async';
     img.src = `Artworks/${file}`;
-    img.alt = `Art piece ${index + 1}`;
+    const altText = `Art piece ${index + 1}`;
+    img.alt = altText;
     img.addEventListener('error', () => {
       frame.classList.add('art-missing');
       frame.innerHTML = `<div class="art-placeholder">Add <code>${file}</code> to the artworks folder.</div>`;
     }, { once: true });
+
+    const triggerLightbox = () => openLightbox(img.src, altText);
+
+    frame.addEventListener('click', triggerLightbox);
+    frame.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        triggerLightbox();
+      }
+    });
 
     frame.appendChild(img);
     fragment.appendChild(frame);
   });
 
   gallery.appendChild(fragment);
+}
+
+function createLightbox() {
+  const existing = document.getElementById('art-lightbox');
+  if (existing) {
+    return {
+      root: existing,
+      image: existing.querySelector('img'),
+      closeButton: existing.querySelector('.lightbox-close'),
+    };
+  }
+
+  const lightbox = document.createElement('div');
+  lightbox.id = 'art-lightbox';
+  lightbox.className = 'art-lightbox';
+  lightbox.setAttribute('aria-hidden', 'true');
+
+  const closeButton = document.createElement('button');
+  closeButton.type = 'button';
+  closeButton.className = 'lightbox-close';
+  closeButton.setAttribute('aria-label', 'Close artwork');
+  closeButton.textContent = '×';
+
+  const image = document.createElement('img');
+  image.alt = '';
+
+  const content = document.createElement('div');
+  content.className = 'art-lightbox-content';
+  content.setAttribute('role', 'dialog');
+  content.setAttribute('aria-modal', 'true');
+  content.setAttribute('aria-label', 'Expanded artwork');
+  content.appendChild(closeButton);
+  content.appendChild(image);
+
+  lightbox.appendChild(content);
+  document.body.appendChild(lightbox);
+
+  return { root: lightbox, image, closeButton };
 }
 
 function initOrbitRotators() {
@@ -328,13 +408,14 @@ function initOrbitRotators() {
     const cards = Array.from(track.querySelectorAll('.orbit-card'));
     if (cards.length === 0) return;
 
-    let index = Math.floor(Math.random() * cards.length);
+    const shouldRotate = track.dataset.rotation !== 'projects';
+    let index = shouldRotate ? Math.floor(Math.random() * cards.length) : 0;
     const rotationMs = 4200;
     const activate = idx => cards.forEach((card, cardIndex) => card.classList.toggle('is-active', idx === cardIndex));
     activate(index);
 
     const pickRandom = () => {
-      if (track.classList.contains('is-expanded')) return;
+      if (!shouldRotate || track.classList.contains('is-expanded')) return;
       let next = Math.floor(Math.random() * cards.length);
       if (cards.length > 1) {
         while (next === index) {
@@ -345,7 +426,7 @@ function initOrbitRotators() {
       activate(index);
     };
 
-    let timer = setInterval(pickRandom, rotationMs);
+    let timer = shouldRotate ? setInterval(pickRandom, rotationMs) : null;
 
     const stop = () => {
       if (timer) {
@@ -355,7 +436,7 @@ function initOrbitRotators() {
     };
 
     const start = () => {
-      if (timer || track.classList.contains('is-expanded')) return;
+      if (!shouldRotate || timer || track.classList.contains('is-expanded')) return;
       timer = setInterval(pickRandom, rotationMs);
     };
 
