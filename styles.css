@@ -519,6 +519,18 @@ h2 {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
+.work-subsection {
+  margin-top: 1.25rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(97, 218, 251, 0.12);
+  display: grid;
+  gap: 0.35rem;
+}
+
+.subsection-heading h3 {
+  margin: 0 0 0.1rem;
+}
+
 .work-card {
   display: grid;
   grid-template-columns: 110px 1fr;
@@ -627,6 +639,11 @@ h2 {
   filter: brightness(1.05) saturate(1.1);
 }
 
+.art-frame:focus-visible {
+  outline: 2px solid rgba(97, 218, 251, 0.8);
+  outline-offset: 2px;
+}
+
 .art-placeholder {
   text-align: center;
   color: #b5c7e1;
@@ -640,6 +657,75 @@ h2 {
 .art-missing {
   background: rgba(19, 19, 19, 0.8);
   border-style: dashed;
+}
+
+.art-lightbox {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(4, 6, 10, 0.85);
+  backdrop-filter: blur(6px);
+  padding: 1.25rem;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.art-lightbox.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.art-lightbox-content {
+  position: relative;
+  max-width: min(960px, 90vw);
+  max-height: 80vh;
+  background: radial-gradient(circle at 20% 20%, rgba(97, 218, 251, 0.15), transparent 45%),
+    radial-gradient(circle at 80% 0%, rgba(140, 82, 255, 0.15), transparent 40%),
+    rgba(12, 14, 20, 0.95);
+  border: 1px solid rgba(97, 218, 251, 0.25);
+  border-radius: 16px;
+  padding: 0.75rem;
+  box-shadow: 0 28px 45px rgba(0, 0, 0, 0.5);
+}
+
+.art-lightbox-content img {
+  max-width: 100%;
+  max-height: 72vh;
+  display: block;
+  border-radius: 12px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(97, 218, 251, 0.4);
+  color: #e8f3ff;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus-visible {
+  transform: scale(1.05);
+  background: rgba(97, 218, 251, 0.12);
+  outline: none;
+}
+
+.lightbox-close:active {
+  transform: scale(0.95);
+}
+
+.lightbox-open {
+  overflow: hidden;
 }
 
 .chip {
