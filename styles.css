@@ -8,8 +8,8 @@
 
 body {
   font-family: 'Oxanium', cursive, sans-serif;
-  background: linear-gradient(160deg, #050505, #161616);
-  color: #f2f2f2;
+  background: #0b0b0b;
+  color: #f5f5f5;
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
@@ -41,9 +41,9 @@ button.primary-btn {
 }
 
 .primary-btn {
-  background: linear-gradient(120deg, #d0d0d0, #b8b8b8);
-  color: #0a0a0a;
-  box-shadow: 0 8px 20px rgba(200, 200, 200, 0.35);
+  background: #dedede;
+  color: #080808;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.18);
 }
 
 .primary-btn:hover,
@@ -120,7 +120,7 @@ nav ul li a::after {
   bottom: 0;
   width: 0%;
   height: 2px;
-  background: linear-gradient(90deg, #d0d0d0, #b8b8b8);
+  background: #d0d0d0;
   transition: width 0.3s ease;
 }
 
@@ -149,7 +149,7 @@ nav ul li a:focus-visible::after {
 
 .half-section {
   flex: 1 1 400px;
-  background: linear-gradient(150deg, rgba(12, 12, 12, 0.95), rgba(35, 35, 35, 0.92));
+  background: #121212;
   padding: 1.5rem;
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -189,21 +189,13 @@ h2 {
 
 /* Projects Section */
 .projects-section {
-  background: linear-gradient(160deg, rgba(17, 17, 17, 0.95), rgba(32, 32, 32, 0.85));
+  background: #121212;
   padding: 2rem;
   border-radius: 22px;
   border: 1px solid rgba(230, 230, 230, 0.2);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
   overflow: hidden;
   position: relative;
-}
-
-.projects-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top, rgba(230, 230, 230, 0.12), transparent 60%);
-  pointer-events: none;
 }
 
 .section-heading {
@@ -238,19 +230,10 @@ h2 {
   border: 1px solid rgba(230, 230, 230, 0.18);
   border-radius: 18px;
   padding: 1rem;
-  background: linear-gradient(135deg, rgba(23, 23, 23, 0.92), rgba(30, 30, 35, 0.9));
+  background: #151515;
   position: relative;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
-}
-
-.orbit-row::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 30% 20%, rgba(230, 230, 230, 0.08), transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(200, 200, 200, 0.08), transparent 45%);
-  pointer-events: none;
 }
 
 .orbit-row-header {
@@ -278,7 +261,7 @@ h2 {
   text-decoration: none;
   padding: 0.2rem 0.5rem;
   border-radius: 12px;
-  background: linear-gradient(90deg, rgba(230, 230, 230, 0.35), rgba(200, 200, 200, 0.25));
+  background: #1a1a1a;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
   width: fit-content;
 }
@@ -311,7 +294,7 @@ h2 {
   padding: 0.75rem;
   border-radius: 14px;
   border: 1px solid rgba(230, 230, 230, 0.2);
-  background: rgba(22, 22, 22, 0.92);
+  background: #141414;
   color: inherit;
   text-decoration: none;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
@@ -339,28 +322,23 @@ h2 {
 
 .orbit-thumb {
   display: block;
-  background: radial-gradient(circle at 30% 30%, rgba(230, 230, 230, 0.6), rgba(20, 20, 20, 0.7)),
-    linear-gradient(145deg, rgba(200, 200, 200, 0.35), rgba(20, 20, 20, 0.8));
+  background: #1a1a1a;
 }
 
 .orbit-thumb.ember {
-  background: radial-gradient(circle at 40% 30%, rgba(210, 210, 210, 0.6), rgba(20, 20, 20, 0.75)),
-    linear-gradient(160deg, rgba(180, 180, 180, 0.4), rgba(20, 20, 20, 0.8));
+  background: #1a1a1a;
 }
 
 .orbit-thumb.forge {
-  background: radial-gradient(circle at 60% 40%, rgba(180, 180, 180, 0.55), rgba(20, 20, 20, 0.75)),
-    linear-gradient(140deg, rgba(160, 160, 160, 0.4), rgba(20, 20, 20, 0.85));
+  background: #1a1a1a;
 }
 
 .orbit-thumb.mech {
-  background: radial-gradient(circle at 35% 40%, rgba(175, 175, 175, 0.55), rgba(20, 20, 20, 0.8)),
-    linear-gradient(150deg, rgba(190, 190, 190, 0.4), rgba(20, 20, 20, 0.9));
+  background: #1a1a1a;
 }
 
 .orbit-thumb.garden {
-  background: radial-gradient(circle at 45% 45%, rgba(170, 170, 170, 0.55), rgba(20, 20, 20, 0.8)),
-    linear-gradient(160deg, rgba(160, 160, 160, 0.35), rgba(20, 20, 20, 0.85));
+  background: #1a1a1a;
 }
 
 .orbit-copy h3 {
@@ -394,7 +372,7 @@ h2 {
 .project-detail {
   display: flex;
   gap: 2rem;
-  background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(34, 34, 34, 0.85));
+  background: #141414;
   padding: 2rem;
   border-radius: 24px;
   border: 1px solid rgba(230, 230, 230, 0.2);
@@ -427,7 +405,7 @@ h2 {
 }
 
 .work-index {
-  background: linear-gradient(135deg, rgba(20, 20, 20, 0.92), rgba(30, 30, 35, 0.88));
+  background: #131313;
   border: 1px solid rgba(230, 230, 230, 0.18);
   border-radius: 20px;
   padding: 1.5rem;
@@ -437,9 +415,7 @@ h2 {
 .work-folder {
   border: 1px solid rgba(230, 230, 230, 0.12);
   border-radius: 14px;
-  background: radial-gradient(circle at 16% 20%, rgba(230, 230, 230, 0.12), transparent 32%),
-    radial-gradient(circle at 90% 10%, rgba(200, 200, 200, 0.08), transparent 30%),
-    rgba(14, 14, 14, 0.8);
+  background: #101010;
   margin-top: 1rem;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
   overflow: hidden;
@@ -586,7 +562,7 @@ h2 {
 .art-folder-note {
   padding: 0.85rem 1rem;
   border-radius: 12px;
-  background: linear-gradient(135deg, rgba(230, 230, 230, 0.1), rgba(200, 200, 200, 0.08));
+  background: rgba(235, 235, 235, 0.06);
   border: 1px solid rgba(230, 230, 230, 0.25);
   color: #e2e2e2;
   margin: 0.5rem 0 1rem;
@@ -609,9 +585,7 @@ h2 {
   overflow: hidden;
   border-radius: 14px;
   border: 1px solid rgba(230, 230, 230, 0.25);
-  background: radial-gradient(circle at 20% 20%, rgba(230, 230, 230, 0.15), transparent 45%),
-    radial-gradient(circle at 80% 0%, rgba(200, 200, 200, 0.1), transparent 40%),
-    rgba(16, 16, 16, 0.9);
+  background: #101010;
   box-shadow: 0 18px 32px rgba(0, 0, 0, 0.45);
   min-height: 160px;
   display: flex;
@@ -676,9 +650,7 @@ h2 {
   position: relative;
   max-width: min(960px, 90vw);
   max-height: 80vh;
-  background: radial-gradient(circle at 20% 20%, rgba(230, 230, 230, 0.15), transparent 45%),
-    radial-gradient(circle at 80% 0%, rgba(200, 200, 200, 0.1), transparent 40%),
-    rgba(12, 12, 12, 0.95);
+  background: #0f0f0f;
   border: 1px solid rgba(230, 230, 230, 0.25);
   border-radius: 16px;
   padding: 0.75rem;
@@ -808,7 +780,7 @@ h2 {
 
 .contact-section {
   margin-top: 3rem;
-  background: linear-gradient(150deg, rgba(16, 16, 16, 0.95), rgba(30, 30, 30, 0.85));
+  background: #121212;
   padding: 2rem;
   border-radius: 22px;
   border: 1px solid rgba(230, 230, 230, 0.2);
@@ -945,7 +917,7 @@ body.js-enabled .contact-section.contact-open .contact-panel {
   justify-content: center;
   border-radius: 12px;
   border: 1px solid rgba(230, 230, 230, 0.35);
-  background: radial-gradient(circle at 30% 30%, rgba(200, 200, 200, 0.18), rgba(230, 230, 230, 0.12));
+  background: #0f0f0f;
   color: #f5f5f5;
   box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
@@ -958,7 +930,7 @@ body.js-enabled .contact-section.contact-open .contact-panel {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(120deg, rgba(230, 230, 230, 0.15), rgba(200, 200, 200, 0.25));
+  background: rgba(230, 230, 230, 0.12);
   opacity: 0;
   transition: opacity 0.25s ease;
   z-index: -1;
@@ -1024,7 +996,7 @@ body.js-enabled .contact-section.contact-open .contact-panel {
 .page-transition {
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(18, 18, 18, 0.95), rgba(4, 4, 6, 0.98));
+  background: rgba(10, 10, 10, 0.96);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1233,7 +1205,7 @@ footer {
   position: absolute;
   inset: -2px;
   border-radius: 20px;
-  background: linear-gradient(120deg, rgba(230, 230, 230, 0.5), rgba(200, 200, 200, 0.3));
+  background: rgba(230, 230, 230, 0.45);
   filter: blur(25px);
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -1249,7 +1221,7 @@ footer {
   position: absolute;
   inset: -8px;
   border-radius: 50%;
-  background: conic-gradient(#e6e6e6, #b8b8b8, #e6e6e6);
+  background: rgba(230, 230, 230, 0.35);
   filter: blur(12px);
   opacity: 0;
   transition: opacity 0.4s ease;
