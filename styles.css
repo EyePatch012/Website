@@ -154,14 +154,15 @@ nav ul li a:focus-visible::after {
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 25px 40px rgba(0, 0, 0, 0.4);
-  transition: transform 0.5s ease, box-shadow 0.5s ease, border 0.5s ease, background 0.35s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease, background 0.25s ease,
+    outline-color 0.2s ease;
 }
 
 .half-section:hover,
 .half-section:focus-within {
-  transform: translateY(-10px);
-  border-color: rgba(240, 240, 240, 0.6);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 0 8px rgba(230, 230, 230, 0.08);
+  transform: translateY(-4px);
+  border-color: rgba(230, 230, 230, 0.45);
+  box-shadow: 0 24px 38px rgba(0, 0, 0, 0.5), 0 0 0 6px rgba(230, 230, 230, 0.08);
   background: #141414;
 }
 
@@ -298,10 +299,10 @@ h2 {
 
 .orbit-card:hover,
 .orbit-card:focus-visible {
-  transform: translateY(-4px) scale(1.01);
-  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.45), 0 0 0 6px rgba(230, 230, 230, 0.08);
-  outline: 2px solid rgba(230, 230, 230, 0.4);
-  border-color: rgba(230, 230, 230, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 24px 38px rgba(0, 0, 0, 0.5), 0 0 0 6px rgba(230, 230, 230, 0.08);
+  outline: 2px solid rgba(230, 230, 230, 0.45);
+  border-color: rgba(230, 230, 230, 0.45);
   background: #161616;
   outline-offset: 4px;
   z-index: 4;
@@ -364,7 +365,8 @@ h2 {
   border-radius: 14px;
   background: #101010;
   margin-top: 1rem;
-  transition: transform 0.35s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, background 0.25s ease,
+    outline-color 0.2s ease;
   overflow: hidden;
 }
 
@@ -397,9 +399,10 @@ h2 {
 
 .work-folder:hover,
 .work-folder:focus-within {
-  transform: translateY(-3px);
-  border-color: rgba(230, 230, 230, 0.35);
-  box-shadow: 0 24px 38px rgba(0, 0, 0, 0.5);
+  transform: translateY(-4px);
+  border-color: rgba(230, 230, 230, 0.45);
+  box-shadow: 0 24px 38px rgba(0, 0, 0, 0.5), 0 0 0 6px rgba(230, 230, 230, 0.08);
+  background: #121212;
 }
 
 .work-folder:hover .folder-summary,
@@ -476,7 +479,8 @@ h2 {
   text-decoration: none;
   color: inherit;
   box-shadow: 0 16px 30px rgba(0, 0, 0, 0.35);
-  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, background 0.25s ease,
+    outline-color 0.2s ease;
 }
 
 .work-card img,
@@ -495,8 +499,10 @@ h2 {
 .work-card:focus-visible {
   transform: translateY(-4px);
   border-color: rgba(230, 230, 230, 0.45);
-  box-shadow: 0 24px 38px rgba(0, 0, 0, 0.45);
-  outline: none;
+  box-shadow: 0 24px 38px rgba(0, 0, 0, 0.5), 0 0 0 6px rgba(230, 230, 230, 0.08);
+  outline: 2px solid rgba(230, 230, 230, 0.45);
+  outline-offset: 4px;
+  background: #161616;
 }
 
 .work-card-body h3 {
@@ -555,6 +561,8 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, background 0.25s ease,
+    outline-color 0.2s ease;
 }
 
 .art-frame img {
@@ -569,6 +577,14 @@ h2 {
 .art-frame:focus-within img {
   transform: scale(1.03);
   filter: brightness(1.05) saturate(1.1);
+}
+
+.art-frame:hover,
+.art-frame:focus-within {
+  transform: translateY(-4px);
+  border-color: rgba(230, 230, 230, 0.45);
+  box-shadow: 0 24px 38px rgba(0, 0, 0, 0.5), 0 0 0 6px rgba(230, 230, 230, 0.08);
+  background: #121212;
 }
 
 .art-frame:focus-visible {
