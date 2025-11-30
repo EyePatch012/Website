@@ -508,13 +508,20 @@ h2 {
   border-radius: 14px;
   background: #101010;
   margin-top: 1rem;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
   overflow: hidden;
 }
 
 .work-folder[open] {
   border-color: rgba(230, 230, 230, 0.35);
   box-shadow: 0 20px 36px rgba(0, 0, 0, 0.45);
+}
+
+.work-folder:hover,
+.work-folder:focus-within {
+  border-color: rgba(230, 230, 230, 0.45);
+  box-shadow: 0 28px 55px rgba(0, 0, 0, 0.6);
+  transform: translateY(-6px);
 }
 
 .folder-summary {
@@ -525,6 +532,7 @@ h2 {
   justify-content: space-between;
   gap: 0.75rem;
   padding: 0.85rem 1rem;
+  transition: background 0.35s ease, border-color 0.35s ease;
 }
 
 .folder-summary::-webkit-details-marker {
@@ -563,6 +571,11 @@ h2 {
 
 .work-folder[open] .folder-indicator::after {
   content: 'Collapse';
+}
+
+.work-folder:hover .folder-summary,
+.work-folder:focus-within .folder-summary {
+  background: radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.06), transparent 36%), rgba(21, 21, 21, 0.95);
 }
 
 .work-folder .work-grid {
