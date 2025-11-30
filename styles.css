@@ -196,6 +196,7 @@ h2 {
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
   overflow: hidden;
   position: relative;
+  z-index: 2;
 }
 
 .section-heading {
@@ -234,6 +235,7 @@ h2 {
   position: relative;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+  z-index: 2;
 }
 
 .orbit-row-header {
@@ -301,6 +303,7 @@ h2 {
   transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.6s ease;
   opacity: 0;
   transform: translateY(16px) scale(0.97);
+  z-index: 3;
 }
 
 .orbit-card.is-active {
@@ -358,6 +361,7 @@ h2 {
   box-shadow: 0 18px 38px rgba(0, 0, 0, 0.45);
   outline: 2px solid rgba(230, 230, 230, 0.4);
   outline-offset: 4px;
+  z-index: 4;
 }
 
 .orbit-card:focus-visible {
