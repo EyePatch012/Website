@@ -212,10 +212,82 @@ window.addEventListener('load', () => {
   initRevealAnimations();
   initHeaderScrollEffect();
   initAquariumIcons();
+  initMatrixRain();
   initContactToggle();
   initArtGallery();
   initPageTransitions();
 });
+
+function initMatrixRain() {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (prefersReducedMotion.matches) return;
+
+  const canvas = document.createElement('canvas');
+  canvas.id = 'matrix-rain';
+  canvas.className = 'matrix-canvas';
+  canvas.setAttribute('aria-hidden', 'true');
+
+  const context = canvas.getContext('2d');
+  document.body.prepend(canvas);
+
+  const glyphs = '01ABCDEFGHIJKLMNOPQRSTUVWXYZあエイウエオカキクケコサシスセソ未来雨霧電光影';
+  const palette = ['#e7fff0', '#d5f5e1', '#c1e8d3', '#b4ddc6'];
+
+  let columns = [];
+  let width = 0;
+  let height = 0;
+
+  const resizeCanvas = () => {
+    const ratio = window.devicePixelRatio || 1;
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width * ratio;
+    canvas.height = height * ratio;
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    context.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+    const estimatedFont = 18;
+    const columnCount = Math.max(8, Math.floor(width / estimatedFont));
+    columns = Array.from({ length: columnCount }, (_, index) => {
+      const fontSize = 14 + Math.random() * 8;
+      const speed = 0.9 + Math.random() * 1.6;
+      return {
+        x: index * (width / columnCount),
+        y: Math.random() * height,
+        fontSize,
+        speed,
+      };
+    });
+  };
+
+  const randomGlyph = () => glyphs[Math.floor(Math.random() * glyphs.length)];
+  const randomColor = () => palette[Math.floor(Math.random() * palette.length)];
+
+  const draw = () => {
+    context.fillStyle = 'rgba(11, 11, 11, 0.08)';
+    context.fillRect(0, 0, width, height);
+
+    columns.forEach(column => {
+      context.font = `${column.fontSize}px 'Oxanium', monospace`;
+      context.fillStyle = randomColor();
+      context.fillText(randomGlyph(), column.x, column.y);
+
+      column.y += column.fontSize * column.speed;
+      if (column.y > height + column.fontSize && Math.random() > 0.965) {
+        column.y = -Math.random() * 50;
+        column.fontSize = 14 + Math.random() * 8;
+        column.speed = 0.9 + Math.random() * 1.6;
+      }
+    });
+
+    requestAnimationFrame(draw);
+  };
+
+  resizeCanvas();
+  draw();
+  window.addEventListener('resize', resizeCanvas);
+}
 
 function initRevealAnimations() {
   const revealTargets = document.querySelectorAll('.reveal, .reveal-card');
