@@ -214,7 +214,6 @@ window.addEventListener('load', () => {
   initAquariumIcons();
   initContactToggle();
   initArtGallery();
-  initOrbitRotators();
   initPageTransitions();
 });
 
@@ -396,56 +395,6 @@ function createLightbox() {
   document.body.appendChild(lightbox);
 
   return { root: lightbox, image, closeButton };
-}
-
-function initOrbitRotators() {
-  const tracks = document.querySelectorAll('.orbit-track');
-  if (!tracks.length) return;
-
-  tracks.forEach(track => {
-    const cards = Array.from(track.querySelectorAll('.orbit-card'));
-    if (cards.length === 0) return;
-
-    const shouldRotate = track.dataset.rotation !== 'projects';
-    let index = shouldRotate ? Math.floor(Math.random() * cards.length) : 0;
-    const rotationMs = 4200;
-    const activate = idx => cards.forEach((card, cardIndex) => card.classList.toggle('is-active', idx === cardIndex));
-    activate(index);
-
-    const pickRandom = () => {
-      if (!shouldRotate) return;
-      let next = Math.floor(Math.random() * cards.length);
-      if (cards.length > 1) {
-        while (next === index) {
-          next = Math.floor(Math.random() * cards.length);
-        }
-      }
-      index = next;
-      activate(index);
-    };
-
-    let timer = shouldRotate ? setInterval(pickRandom, rotationMs) : null;
-
-    const stop = () => {
-      if (timer) {
-        clearInterval(timer);
-        timer = null;
-      }
-    };
-
-    const start = () => {
-      if (!shouldRotate || timer) return;
-      timer = setInterval(pickRandom, rotationMs);
-    };
-
-    track.addEventListener('mouseenter', stop);
-    track.addEventListener('mouseleave', start);
-
-    cards.forEach(card => {
-      card.addEventListener('focusin', stop);
-      card.addEventListener('focusout', start);
-    });
-  });
 }
 
 function initPageTransitions() {
