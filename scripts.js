@@ -6,10 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function getRandomBrightColor() {
-  const hue = Math.floor(Math.random() * 360);
-  const saturation = 80 + Math.random() * 20;
-  const lightness = 50 + Math.random() * 30;
-  return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+  const shade = 170 + Math.random() * 70;
+  const value = Math.min(255, Math.round(shade));
+  return `rgb(${value}, ${value}, ${value})`;
 }
 
 for (let i = 0; i < trailCount; i++) {
@@ -102,10 +101,9 @@ function getRandomDropShadow() {
   const x = (Math.random() * 10 - 5).toFixed(1) + 'px';
   const y = (Math.random() * 10 - 5).toFixed(1) + 'px';
   const blur = (5 + Math.random() * 5).toFixed(1) + 'px';
-  const hue = Math.floor(Math.random() * 360);
-  const saturation = 70 + Math.random() * 30;
-  const lightness = 50 + Math.random() * 20;
-  const color = `hsla(${hue}, ${saturation}%, ${lightness}%, 0.7)`;
+  const tone = 160 + Math.random() * 80;
+  const value = Math.min(255, Math.round(tone));
+  const color = `rgba(${value}, ${value}, ${value}, 0.7)`;
   return `${x} ${y} ${blur} ${color}`;
 }
 
@@ -415,7 +413,7 @@ function initOrbitRotators() {
     activate(index);
 
     const pickRandom = () => {
-      if (!shouldRotate || track.classList.contains('is-expanded')) return;
+      if (!shouldRotate) return;
       let next = Math.floor(Math.random() * cards.length);
       if (cards.length > 1) {
         while (next === index) {
@@ -436,7 +434,7 @@ function initOrbitRotators() {
     };
 
     const start = () => {
-      if (!shouldRotate || timer || track.classList.contains('is-expanded')) return;
+      if (!shouldRotate || timer) return;
       timer = setInterval(pickRandom, rotationMs);
     };
 
@@ -446,27 +444,6 @@ function initOrbitRotators() {
     cards.forEach(card => {
       card.addEventListener('focusin', stop);
       card.addEventListener('focusout', start);
-    });
-
-    const expandButton = track.closest('.orbit-row')?.querySelector('.row-expand');
-    const setExpanded = expanded => {
-      track.classList.toggle('is-expanded', expanded);
-      expandButton?.setAttribute('aria-expanded', expanded);
-      if (expandButton) {
-        expandButton.textContent = expanded ? 'Collapse' : 'Expand';
-      }
-      if (expanded) {
-        stop();
-        cards.forEach(card => card.classList.add('is-active'));
-      } else {
-        cards.forEach((card, cardIndex) => card.classList.toggle('is-active', cardIndex === index));
-        start();
-      }
-    };
-
-    expandButton?.addEventListener('click', () => {
-      const expanded = expandButton.getAttribute('aria-expanded') === 'true';
-      setExpanded(!expanded);
     });
   });
 }
