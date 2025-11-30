@@ -1160,6 +1160,7 @@ body.js-enabled .contact-section.contact-open .contact-panel {
   mix-blend-mode: screen;
   box-shadow: 0 0 18px rgba(240, 240, 240, 0.35);
   transition: background-color 1.5s ease, box-shadow 1.5s ease;
+  z-index: 9999; /* always sit above page content */
 }
 
 body {
