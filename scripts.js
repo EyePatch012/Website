@@ -1,16 +1,22 @@
+// ===== Cursor trail setup =====
+// This section builds a glowing trail behind the cursor. Increase `trailCount`
+// to add more particles or tweak `getRandomBrightColor` for a different palette.
 const trailCount = 10;
 const trailElements = [];
 
+// Mark the document as JS-enabled to allow progressive enhancement styles.
 document.addEventListener('DOMContentLoaded', () => {
   document.body.classList.add('js-enabled');
 });
 
+// Generates a near-white RGB color used for the glowing dots.
 function getRandomBrightColor() {
   const shade = 170 + Math.random() * 70;
   const value = Math.min(255, Math.round(shade));
   return `rgb(${value}, ${value}, ${value})`;
 }
 
+// Build the glowing dots that follow the cursor.
 for (let i = 0; i < trailCount; i++) {
   const div = document.createElement('div');
   div.classList.add('cursor-trail');
@@ -28,15 +34,18 @@ for (let i = 0; i < trailCount; i++) {
   trailElements.push(div);
 }
 
+// Track current mouse coordinates and previous dot positions for smooth movement.
 let mouseX = window.innerWidth / 2;
 let mouseY = window.innerHeight / 2;
 const positions = Array.from({ length: trailCount }, () => ({ x: mouseX, y: mouseY }));
 
+// Update target coordinates on pointer move.
 window.addEventListener('mousemove', (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
 });
 
+// Linear interpolation helper; lower `amt` slows the follow speed.
 function lerp(start, end, amt) {
   return (1 - amt) * start + amt * end;
 }
@@ -60,6 +69,7 @@ function animateTrail() {
     el.style.transform = `scale(${scale})`;
   });
 
+  // Re-run each frame for continuous motion.
   requestAnimationFrame(animateTrail);
 }
 
@@ -76,12 +86,16 @@ function updateTrailColors() {
   });
 }
 
+// Change the delay here to adjust how frequently the colors cycle.
 setInterval(updateTrailColors, 2000);
 animateTrail();
+
+// ===== Typing effect for page titles =====
 function initTypewriter() {
   const typewriterTarget = document.getElementById('typewriter');
   if (!typewriterTarget) return;
   const text = typewriterTarget.dataset.text || typewriterTarget.textContent.trim();
+  // Lower `speed` for faster typing, higher for slower.
   const speed = 150;
   let index = 0;
   typewriterTarget.textContent = '';
@@ -97,6 +111,7 @@ function initTypewriter() {
 
 const scatterImages = ['Images/sc1.png', 'Images/sc2.png', 'Images/sc3.png', 'Images/0.png', 'Images/1.png'];
 
+// ===== Floating background icons =====
 function getRandomDropShadow() {
   const x = (Math.random() * 10 - 5).toFixed(1) + 'px';
   const y = (Math.random() * 10 - 5).toFixed(1) + 'px';
@@ -145,6 +160,7 @@ function initAquariumIcons() {
   const fishIcons = Array.from(aquarium.querySelectorAll('.scatter-img'));
   if (!fishIcons.length) return;
 
+  // Each scatter image drifts slowly and responds to the cursor for a playful feel.
   const fishData = fishIcons.map(icon => ({
     el: icon,
     driftSpeed: 0.15 + Math.random() * 0.25,
@@ -154,6 +170,7 @@ function initAquariumIcons() {
 
   let pointer = { x: 0, y: 0, active: false };
 
+  // Track pointer location so icons can gently repel away.
   window.addEventListener('pointermove', event => {
     pointer = { x: event.clientX, y: event.clientY, active: true };
   });
@@ -183,11 +200,14 @@ function initAquariumIcons() {
       fish.el.style.transform = `translate(${driftX + repelX}px, ${driftY + repelY}px) rotate(${driftX * 0.3}deg)`;
     });
 
+    // Keep the icons moving smoothly.
     requestAnimationFrame(animateFish);
   }
 
+  // Start the loop immediately after paint.
   requestAnimationFrame(animateFish);
 
+  // Small interaction to scatter an icon to a fresh random spot.
   const dartAway = icon => {
     icon.classList.add('is-darting');
     positionRandomly(icon);
@@ -204,9 +224,11 @@ function initAquariumIcons() {
     });
   });
 
+  // Refresh the glow so scattered icons shimmer over time.
   setInterval(() => fishIcons.forEach(applyRandomGlow), 4000);
 }
 
+// Run interactive enhancements once the page has fully loaded assets.
 window.addEventListener('load', () => {
   initTypewriter();
   initRevealAnimations();
@@ -218,6 +240,7 @@ window.addEventListener('load', () => {
   initPageTransitions();
 });
 
+// Fade/slide elements into view when scrolled into the viewport.
 function initRevealAnimations() {
   const revealTargets = document.querySelectorAll('.reveal, .reveal-card');
   if (!revealTargets.length) return;
@@ -247,6 +270,7 @@ function initHeaderScrollEffect() {
   const header = document.querySelector('.page-header');
   if (!header) return;
 
+  // Add a condensed header style after the visitor scrolls a bit.
   const toggleHeaderState = () => {
     if (window.scrollY > 30) {
       header.classList.add('header-scrolled');
@@ -259,6 +283,7 @@ function initHeaderScrollEffect() {
   toggleHeaderState();
 }
 
+// Expands and collapses the contact form panel.
 function initContactToggle() {
   const contactSection = document.querySelector('.contact-section');
   if (!contactSection) return;
@@ -267,6 +292,7 @@ function initContactToggle() {
   const panel = contactSection.querySelector('.contact-panel');
   if (!toggleButton || !panel) return;
 
+  // Update aria attributes, button text, and styling when toggling the form.
   const setExpanded = expanded => {
     toggleButton.setAttribute('aria-expanded', expanded);
     panel.setAttribute('aria-hidden', !expanded);
@@ -294,6 +320,7 @@ function initArtGallery() {
   const gallery = document.getElementById('art-gallery');
   if (!gallery) return;
 
+  // Add more filenames here to grow the gallery without editing markup.
   const artFiles = ['piece-1.jpg', 'piece-2.jpg', 'piece-3.jpg', 'piece-4.jpg', 'piece-5.jpg', 'piece-6.jpg', 'piece-7.jpg'];
   const fragment = document.createDocumentFragment();
 
@@ -398,6 +425,8 @@ function createLightbox() {
   return { root: lightbox, image, closeButton };
 }
 
+// Highlights cards in carousels on mods/project pages; set `data-rotation="projects"`
+// to keep a row static.
 function initOrbitRotators() {
   const tracks = document.querySelectorAll('.orbit-track');
   if (!tracks.length) return;
@@ -448,6 +477,7 @@ function initOrbitRotators() {
   });
 }
 
+// Adds a soft overlay when navigating internal links for a smoother transition.
 function initPageTransitions() {
   const overlay = document.querySelector('.page-transition');
   if (!overlay) return;
