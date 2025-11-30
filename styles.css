@@ -17,6 +17,34 @@ body {
   overflow-x: hidden;
 }
 
+:root {
+  --lift-translate: -4px;
+  --lift-border: rgba(230, 230, 230, 0.45);
+  --lift-shadow: 0 24px 38px rgba(0, 0, 0, 0.5);
+  --lift-ring: 0 0 0 6px rgba(230, 230, 230, 0.08);
+  --lift-hover-bg: #151515;
+}
+
+.lift-surface {
+  outline: 2px solid transparent;
+  outline-offset: 4px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.25s ease, border-color 0.35s ease,
+    outline-color 0.2s ease, z-index 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.lift-surface:hover,
+.lift-surface:focus-visible,
+.lift-surface:focus-within {
+  transform: translateY(var(--lift-translate));
+  border-color: var(--lift-border);
+  box-shadow: var(--lift-shadow), var(--lift-ring);
+  background: var(--lift-hover-bg);
+  outline: 2px solid var(--lift-border);
+  z-index: 5;
+}
+
 a {
   color: #e6e6e6;
   text-decoration: none;
@@ -154,19 +182,6 @@ nav ul li a:focus-visible::after {
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 25px 40px rgba(0, 0, 0, 0.4);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease, background 0.25s ease,
-    outline-color 0.2s ease;
-  outline: 2px solid transparent;
-  outline-offset: 4px;
-}
-
-.half-section:hover,
-.half-section:focus-within {
-  transform: translateY(-4px);
-  border-color: rgba(230, 230, 230, 0.45);
-  box-shadow: 0 24px 38px rgba(0, 0, 0, 0.5), 0 0 0 6px rgba(230, 230, 230, 0.08);
-  background: #141414;
-  outline: 2px solid rgba(230, 230, 230, 0.45);
 }
 
 h2 {
@@ -247,10 +262,6 @@ h2 {
   color: inherit;
   text-decoration: none;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-  outline: 2px solid transparent;
-  outline-offset: 4px;
-  transition: transform 0.35s ease, box-shadow 0.35s ease, outline-color 0.2s ease,
-    border-color 0.25s ease, background 0.25s ease;
   z-index: 2;
 }
 
@@ -269,22 +280,6 @@ h2 {
   background: #1a1a1a;
 }
 
-.orbit-thumb.ember {
-  background: #1a1a1a;
-}
-
-.orbit-thumb.forge {
-  background: #1a1a1a;
-}
-
-.orbit-thumb.mech {
-  background: #1a1a1a;
-}
-
-.orbit-thumb.garden {
-  background: #1a1a1a;
-}
-
 .orbit-copy h3 {
   margin: 0 0 0.25rem;
   color: #e6e6e6;
@@ -300,17 +295,6 @@ h2 {
   margin: 0;
   color: #d6d6d6;
   font-size: 0.95rem;
-}
-
-.orbit-card:hover,
-.orbit-card:focus-visible {
-  transform: translateY(-4px);
-  box-shadow: 0 24px 38px rgba(0, 0, 0, 0.5), 0 0 0 6px rgba(230, 230, 230, 0.08);
-  outline: 2px solid rgba(230, 230, 230, 0.45);
-  border-color: rgba(230, 230, 230, 0.45);
-  background: #161616;
-  outline-offset: 4px;
-  z-index: 4;
 }
 
 .orbit-card:focus-visible {
@@ -370,11 +354,7 @@ h2 {
   border-radius: 14px;
   background: #101010;
   margin-top: 1rem;
-  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, background 0.25s ease,
-    outline-color 0.2s ease;
   overflow: hidden;
-  outline: 2px solid transparent;
-  outline-offset: 4px;
 }
 
 .work-folder[open] {
@@ -402,15 +382,6 @@ h2 {
 .folder-summary:focus-visible {
   outline: 2px solid rgba(230, 230, 230, 0.7);
   outline-offset: 4px;
-}
-
-.work-folder:hover,
-.work-folder:focus-within {
-  transform: translateY(-4px);
-  border-color: rgba(230, 230, 230, 0.45);
-  box-shadow: 0 24px 38px rgba(0, 0, 0, 0.5), 0 0 0 6px rgba(230, 230, 230, 0.08);
-  background: #121212;
-  outline: 2px solid rgba(230, 230, 230, 0.45);
 }
 
 .work-folder:hover .folder-summary,
@@ -487,8 +458,6 @@ h2 {
   text-decoration: none;
   color: inherit;
   box-shadow: 0 16px 30px rgba(0, 0, 0, 0.35);
-  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, background 0.25s ease,
-    outline-color 0.2s ease;
 }
 
 .work-card img,
@@ -501,16 +470,6 @@ h2 {
 
 .work-card .orbit-thumb {
   border: 1px solid rgba(230, 230, 230, 0.35);
-}
-
-.work-card:hover,
-.work-card:focus-visible {
-  transform: translateY(-4px);
-  border-color: rgba(230, 230, 230, 0.45);
-  box-shadow: 0 24px 38px rgba(0, 0, 0, 0.5), 0 0 0 6px rgba(230, 230, 230, 0.08);
-  outline: 2px solid rgba(230, 230, 230, 0.45);
-  outline-offset: 4px;
-  background: #161616;
 }
 
 .work-card-body h3 {
@@ -569,8 +528,6 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, background 0.25s ease,
-    outline-color 0.2s ease;
 }
 
 .art-frame img {
@@ -585,19 +542,6 @@ h2 {
 .art-frame:focus-within img {
   transform: scale(1.03);
   filter: brightness(1.05) saturate(1.1);
-}
-
-.art-frame:hover,
-.art-frame:focus-within {
-  transform: translateY(-4px);
-  border-color: rgba(230, 230, 230, 0.45);
-  box-shadow: 0 24px 38px rgba(0, 0, 0, 0.5), 0 0 0 6px rgba(230, 230, 230, 0.08);
-  background: #121212;
-}
-
-.art-frame:focus-visible {
-  outline: 2px solid rgba(230, 230, 230, 0.8);
-  outline-offset: 2px;
 }
 
 .art-placeholder {

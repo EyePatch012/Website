@@ -328,7 +328,7 @@ function initArtGallery() {
 
   artFiles.forEach((file, index) => {
     const frame = document.createElement('figure');
-    frame.className = 'art-frame';
+    frame.className = 'art-frame lift-surface';
     frame.tabIndex = 0;
 
     const img = document.createElement('img');
