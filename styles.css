@@ -1,5 +1,7 @@
 
-/* Reset */
+/* =====================================
+   Global reset + typography baseline
+   ===================================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -17,6 +19,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Full-viewport matrix canvas lives behind every page */
 .matrix-canvas {
   position: fixed;
   inset: 0;
@@ -28,6 +31,7 @@ body {
   z-index: 0;
 }
 
+/* Shared hover tokens keep lift effects consistent */
 :root {
   --lift-translate: -4px;
   --lift-border: rgba(230, 230, 230, 0.45);

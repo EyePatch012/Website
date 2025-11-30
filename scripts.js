@@ -1,16 +1,22 @@
+// =========================
+// Cursor trail + glow dots
+// =========================
 const trailCount = 10;
 const trailElements = [];
 
+// Add a class once JS is ready so CSS can safely hide progressive enhancements.
 document.addEventListener('DOMContentLoaded', () => {
   document.body.classList.add('js-enabled');
 });
 
+// Slightly random neutral glows keep the cursor trail from feeling repetitive.
 function getRandomBrightColor() {
   const shade = 170 + Math.random() * 70;
   const value = Math.min(255, Math.round(shade));
   return `rgb(${value}, ${value}, ${value})`;
 }
 
+// Build the stack of trail dots that follow the pointer.
 for (let i = 0; i < trailCount; i++) {
   const div = document.createElement('div');
   div.classList.add('cursor-trail');
@@ -37,10 +43,9 @@ window.addEventListener('mousemove', (e) => {
   mouseY = e.clientY;
 });
 
-function lerp(start, end, amt) {
-  return (1 - amt) * start + amt * end;
-}
+const lerp = (start, end, amt) => (1 - amt) * start + amt * end;
 
+// Gentle follow animation keeps the dots trailing instead of snapping.
 function animateTrail() {
   positions[0].x = lerp(positions[0].x, mouseX, 0.2);
   positions[0].y = lerp(positions[0].y, mouseY, 0.2);
@@ -63,6 +68,7 @@ function animateTrail() {
   requestAnimationFrame(animateTrail);
 }
 
+// Refresh trail glows periodically for subtle variation.
 function updateTrailColors() {
   trailElements.forEach(el => {
     const color = getRandomBrightColor();
@@ -78,6 +84,10 @@ function updateTrailColors() {
 
 setInterval(updateTrailColors, 2000);
 animateTrail();
+
+// =========================
+// Typewriter heading
+// =========================
 function initTypewriter() {
   const typewriterTarget = document.getElementById('typewriter');
   if (!typewriterTarget) return;
@@ -95,8 +105,12 @@ function initTypewriter() {
   })();
 }
 
+// =========================
+// Floating scatter icons
+// =========================
 const scatterImages = ['Images/sc1.png', 'Images/sc2.png', 'Images/sc3.png', 'Images/0.png', 'Images/1.png'];
 
+// Neutral drop shadows keep the scatter icons readable on the dark canvas.
 function getRandomDropShadow() {
   const x = (Math.random() * 10 - 5).toFixed(1) + 'px';
   const y = (Math.random() * 10 - 5).toFixed(1) + 'px';
@@ -207,6 +221,9 @@ function initAquariumIcons() {
   setInterval(() => fishIcons.forEach(applyRandomGlow), 4000);
 }
 
+// =========================
+// App lifecycle boot
+// =========================
 window.addEventListener('load', () => {
   initTypewriter();
   initRevealAnimations();
@@ -218,6 +235,9 @@ window.addEventListener('load', () => {
   initPageTransitions();
 });
 
+// =========================
+// Matrix rain background
+// =========================
 function initMatrixRain() {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (prefersReducedMotion.matches) return;
@@ -251,7 +271,7 @@ function initMatrixRain() {
     const columnCount = Math.max(8, Math.floor(width / estimatedFont));
     columns = Array.from({ length: columnCount }, (_, index) => {
       const fontSize = 14 + Math.random() * 8;
-      const speed = 0.9 + Math.random() * 1.6;
+      const speed = 0.35 + Math.random() * 0.55;
       return {
         x: index * (width / columnCount),
         y: Math.random() * height,
@@ -265,7 +285,7 @@ function initMatrixRain() {
   const randomColor = () => palette[Math.floor(Math.random() * palette.length)];
 
   const draw = () => {
-    context.fillStyle = 'rgba(11, 11, 11, 0.08)';
+    context.fillStyle = 'rgba(11, 11, 11, 0.05)';
     context.fillRect(0, 0, width, height);
 
     columns.forEach(column => {
@@ -274,10 +294,10 @@ function initMatrixRain() {
       context.fillText(randomGlyph(), column.x, column.y);
 
       column.y += column.fontSize * column.speed;
-      if (column.y > height + column.fontSize && Math.random() > 0.965) {
+      if (column.y > height + column.fontSize && Math.random() > 0.98) {
         column.y = -Math.random() * 50;
         column.fontSize = 14 + Math.random() * 8;
-        column.speed = 0.9 + Math.random() * 1.6;
+        column.speed = 0.35 + Math.random() * 0.55;
       }
     });
 
@@ -289,6 +309,9 @@ function initMatrixRain() {
   window.addEventListener('resize', resizeCanvas);
 }
 
+// =========================
+// Scroll-based reveal
+// =========================
 function initRevealAnimations() {
   const revealTargets = document.querySelectorAll('.reveal, .reveal-card');
   if (!revealTargets.length) return;
@@ -314,6 +337,9 @@ function initRevealAnimations() {
   revealTargets.forEach(target => observer.observe(target));
 }
 
+// =========================
+// Header scroll state
+// =========================
 function initHeaderScrollEffect() {
   const header = document.querySelector('.page-header');
   if (!header) return;
@@ -330,6 +356,9 @@ function initHeaderScrollEffect() {
   toggleHeaderState();
 }
 
+// =========================
+// Contact panel toggle
+// =========================
 function initContactToggle() {
   const contactSection = document.querySelector('.contact-section');
   if (!contactSection) return;
@@ -361,6 +390,9 @@ function initContactToggle() {
   });
 }
 
+// =========================
+// Art gallery + lightbox
+// =========================
 function initArtGallery() {
   const gallery = document.getElementById('art-gallery');
   if (!gallery) return;
@@ -469,6 +501,9 @@ function createLightbox() {
   return { root: lightbox, image, closeButton };
 }
 
+// =========================
+// Page transition overlay
+// =========================
 function initPageTransitions() {
   const overlay = document.querySelector('.page-transition');
   if (!overlay) return;
