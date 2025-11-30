@@ -3,22 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\snipe\\Documents\\GitHub\\Website\\rope-movement.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:rope-movement.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\snipe\\Documents\\GitHub\\Website\\party-game.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:party-game.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\snipe\\Documents\\GitHub\\Website\\trading-system.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:trading-system.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\snipe\\Documents\\GitHub\\Website\\rpg-dragon-combat.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:rpg-dragon-combat.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\snipe\\Documents\\GitHub\\Website\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
@@ -35,66 +19,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "rope-movement.html",
-              "DocumentMoniker": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\rope-movement.html",
-              "RelativeDocumentMoniker": "rope-movement.html",
-              "ToolTip": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\rope-movement.html",
-              "RelativeToolTip": "rope-movement.html",
-              "ViewState": "AgIAABYAAAAAAAAAAAAYwDcAAABYAQAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-11-23T18:55:24.196Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "party-game.html",
-              "DocumentMoniker": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\party-game.html",
-              "RelativeDocumentMoniker": "party-game.html",
-              "ToolTip": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\party-game.html",
-              "RelativeToolTip": "party-game.html",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAYwDcAAABYAQAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-11-23T18:53:10.402Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "trading-system.html",
-              "DocumentMoniker": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\trading-system.html",
-              "RelativeDocumentMoniker": "trading-system.html",
-              "ToolTip": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\trading-system.html",
-              "RelativeToolTip": "trading-system.html",
-              "ViewState": "AgIAACcAAAAAAAAAAAAYwDkAAABYAQAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-11-23T18:47:35.168Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "rpg-dragon-combat.html",
-              "DocumentMoniker": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\rpg-dragon-combat.html",
-              "RelativeDocumentMoniker": "rpg-dragon-combat.html",
-              "ToolTip": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\rpg-dragon-combat.html",
-              "RelativeToolTip": "rpg-dragon-combat.html",
-              "ViewState": "AgIAACAAAAAAAAAAAAAYwEsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-11-19T16:12:42.827Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\index.html",
               "RelativeDocumentMoniker": "index.html",
               "ToolTip": "C:\\Users\\snipe\\Documents\\GitHub\\Website\\index.html",
               "RelativeToolTip": "index.html",
-              "ViewState": "AgIAAMYAAAAAAAAAAAAAACoAAABZAAAAAAAAAA==",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAAAL4AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-11-19T16:02:03.13Z"
+              "WhenOpened": "2025-11-30T16:32:56.287Z",
+              "EditorCaption": ""
             }
           ]
         }
