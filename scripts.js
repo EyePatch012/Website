@@ -237,6 +237,7 @@ window.addEventListener('load', () => {
   initContactToggle();
   initArtGallery();
   initOrbitRotators();
+  initProjectPreviews();
   initPageTransitions();
 });
 
@@ -474,6 +475,140 @@ function initOrbitRotators() {
       card.addEventListener('focusin', stop);
       card.addEventListener('focusout', start);
     });
+  });
+}
+
+function initProjectPreviews() {
+  const cards = document.querySelectorAll('.work-card[data-preview]');
+  if (!cards.length) return;
+
+  const popover = document.createElement('div');
+  popover.className = 'preview-popover';
+  popover.setAttribute('aria-hidden', 'true');
+
+  const frame = document.createElement('iframe');
+  frame.title = 'Project preview';
+  frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+  frame.referrerPolicy = 'strict-origin-when-cross-origin';
+  frame.setAttribute('allowfullscreen', '');
+  popover.appendChild(frame);
+  document.body.appendChild(popover);
+
+  let hideTimer;
+  let showTimer;
+  let activeCard = null;
+  let pendingRate = null;
+
+  const sendCommand = (func, args = []) => {
+    if (frame.contentWindow) {
+      frame.contentWindow.postMessage(JSON.stringify({ event: 'command', func, args }), '*');
+    }
+  };
+
+  const setPlaybackRate = rate => {
+    pendingRate = rate;
+    sendCommand('setPlaybackRate', [rate]);
+  };
+
+  frame.addEventListener('load', () => {
+    if (!activeCard) return;
+    sendCommand('playVideo');
+    if (pendingRate) {
+      setTimeout(() => setPlaybackRate(pendingRate), 60);
+    }
+  });
+
+  const buildSrc = card => {
+    try {
+      const url = new URL(card.dataset.preview, window.location.href);
+      const videoId = url.pathname.split('/').pop();
+      url.searchParams.set('autoplay', '1');
+      url.searchParams.set('mute', '1');
+      url.searchParams.set('controls', '0');
+      url.searchParams.set('rel', '0');
+      url.searchParams.set('playsinline', '1');
+      url.searchParams.set('loop', '1');
+      url.searchParams.set('enablejsapi', '1');
+      if (videoId) {
+        url.searchParams.set('playlist', videoId);
+      }
+      return url.toString();
+    } catch (error) {
+      return null;
+    }
+  };
+
+  const positionPopover = card => {
+    const rect = card.getBoundingClientRect();
+    const viewWidth = document.documentElement.clientWidth;
+    const scrollX = window.pageXOffset;
+    const scrollY = window.pageYOffset;
+    const offset = 18;
+    const width = popover.offsetWidth || 360;
+    const height = popover.offsetHeight || width * 0.56;
+    const desiredLeft = scrollX + rect.right + offset;
+    const maxLeft = scrollX + viewWidth - width - 12;
+    const clampedLeft = Math.max(scrollX + 12, Math.min(desiredLeft, maxLeft));
+    const centeredTop = scrollY + rect.top + rect.height / 2 - height / 2;
+    const top = Math.max(scrollY + 12, centeredTop);
+    popover.style.left = `${clampedLeft}px`;
+    popover.style.top = `${top}px`;
+  };
+
+  const hidePreview = () => {
+    clearTimeout(showTimer);
+    hideTimer = setTimeout(() => {
+      popover.classList.remove('is-visible');
+      popover.setAttribute('aria-hidden', 'true');
+      sendCommand('stopVideo');
+      frame.src = 'about:blank';
+      activeCard = null;
+    }, 60);
+  };
+
+  const showPreview = card => {
+    clearTimeout(hideTimer);
+    if (window.innerWidth <= 900) return;
+    activeCard = card;
+    positionPopover(card);
+    popover.classList.add('is-visible');
+    popover.setAttribute('aria-hidden', 'false');
+
+    const desiredRate = Number(card.dataset.previewRate) || 2;
+    const nextSrc = buildSrc(card);
+    if (!nextSrc) return;
+    if (frame.src !== nextSrc) {
+      frame.src = nextSrc;
+    } else {
+      sendCommand('playVideo');
+      setPlaybackRate(desiredRate);
+    }
+    setPlaybackRate(desiredRate);
+  };
+
+  const handleEnter = event => {
+    const card = event.currentTarget;
+    clearTimeout(showTimer);
+    showTimer = setTimeout(() => showPreview(card), 120);
+  };
+
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', handleEnter);
+    card.addEventListener('focusin', handleEnter);
+    card.addEventListener('mouseleave', hidePreview);
+    card.addEventListener('focusout', hidePreview);
+  });
+
+  window.addEventListener('scroll', () => {
+    if (activeCard && popover.classList.contains('is-visible')) {
+      positionPopover(activeCard);
+    }
+  }, { passive: true });
+
+  window.addEventListener('resize', () => {
+    if (activeCard && popover.classList.contains('is-visible')) {
+      positionPopover(activeCard);
+    }
   });
 }
 
