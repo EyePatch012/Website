@@ -1,16 +1,22 @@
+// ===== Cursor trail setup =====
+// This section builds a glowing trail behind the cursor. Increase `trailCount`
+// to add more particles or tweak `getRandomBrightColor` for a different palette.
 const trailCount = 10;
 const trailElements = [];
 
+// Mark the document as JS-enabled to allow progressive enhancement styles.
 document.addEventListener('DOMContentLoaded', () => {
   document.body.classList.add('js-enabled');
 });
 
+// Generates a near-white RGB color used for the glowing dots.
 function getRandomBrightColor() {
   const shade = 170 + Math.random() * 70;
   const value = Math.min(255, Math.round(shade));
   return `rgb(${value}, ${value}, ${value})`;
 }
 
+// Build the glowing dots that follow the cursor.
 for (let i = 0; i < trailCount; i++) {
   const div = document.createElement('div');
   div.classList.add('cursor-trail');
@@ -28,15 +34,18 @@ for (let i = 0; i < trailCount; i++) {
   trailElements.push(div);
 }
 
+// Track current mouse coordinates and previous dot positions for smooth movement.
 let mouseX = window.innerWidth / 2;
 let mouseY = window.innerHeight / 2;
 const positions = Array.from({ length: trailCount }, () => ({ x: mouseX, y: mouseY }));
 
+// Update target coordinates on pointer move.
 window.addEventListener('mousemove', (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
 });
 
+// Linear interpolation helper; lower `amt` slows the follow speed.
 function lerp(start, end, amt) {
   return (1 - amt) * start + amt * end;
 }
@@ -60,6 +69,7 @@ function animateTrail() {
     el.style.transform = `scale(${scale})`;
   });
 
+  // Re-run each frame for continuous motion.
   requestAnimationFrame(animateTrail);
 }
 
@@ -76,12 +86,16 @@ function updateTrailColors() {
   });
 }
 
+// Change the delay here to adjust how frequently the colors cycle.
 setInterval(updateTrailColors, 2000);
 animateTrail();
+
+// ===== Typing effect for page titles =====
 function initTypewriter() {
   const typewriterTarget = document.getElementById('typewriter');
   if (!typewriterTarget) return;
   const text = typewriterTarget.dataset.text || typewriterTarget.textContent.trim();
+  // Lower `speed` for faster typing, higher for slower.
   const speed = 150;
   let index = 0;
   typewriterTarget.textContent = '';
@@ -97,6 +111,7 @@ function initTypewriter() {
 
 const scatterImages = ['Images/sc1.png', 'Images/sc2.png', 'Images/sc3.png', 'Images/0.png', 'Images/1.png'];
 
+// ===== Floating background icons =====
 function getRandomDropShadow() {
   const x = (Math.random() * 10 - 5).toFixed(1) + 'px';
   const y = (Math.random() * 10 - 5).toFixed(1) + 'px';
@@ -145,6 +160,7 @@ function initAquariumIcons() {
   const fishIcons = Array.from(aquarium.querySelectorAll('.scatter-img'));
   if (!fishIcons.length) return;
 
+  // Each scatter image drifts slowly and responds to the cursor for a playful feel.
   const fishData = fishIcons.map(icon => ({
     el: icon,
     driftSpeed: 0.15 + Math.random() * 0.25,
@@ -154,6 +170,7 @@ function initAquariumIcons() {
 
   let pointer = { x: 0, y: 0, active: false };
 
+  // Track pointer location so icons can gently repel away.
   window.addEventListener('pointermove', event => {
     pointer = { x: event.clientX, y: event.clientY, active: true };
   });
@@ -183,11 +200,14 @@ function initAquariumIcons() {
       fish.el.style.transform = `translate(${driftX + repelX}px, ${driftY + repelY}px) rotate(${driftX * 0.3}deg)`;
     });
 
+    // Keep the icons moving smoothly.
     requestAnimationFrame(animateFish);
   }
 
+  // Start the loop immediately after paint.
   requestAnimationFrame(animateFish);
 
+  // Small interaction to scatter an icon to a fresh random spot.
   const dartAway = icon => {
     icon.classList.add('is-darting');
     positionRandomly(icon);
@@ -204,9 +224,11 @@ function initAquariumIcons() {
     });
   });
 
+  // Refresh the glow so scattered icons shimmer over time.
   setInterval(() => fishIcons.forEach(applyRandomGlow), 4000);
 }
 
+// Run interactive enhancements once the page has fully loaded assets.
 window.addEventListener('load', () => {
   initTypewriter();
   initRevealAnimations();
@@ -215,9 +237,161 @@ window.addEventListener('load', () => {
   initContactToggle();
   initArtGallery();
   initOrbitRotators();
+  initProjectHoverPreviews();
   initPageTransitions();
 });
 
+// Plays a muted, sped-up YouTube preview when hovering project cards.
+// Adjust `DEFAULT_PREVIEW_RATE` to change the playback speed globally or
+// set `data-preview-rate` on a specific card to override.
+const DEFAULT_PREVIEW_RATE = 2.5;
+let youTubeApiPromise;
+
+function loadYouTubeIframeApi() {
+  if (window.YT && typeof window.YT.Player === 'function') {
+    return Promise.resolve(window.YT);
+  }
+
+  if (youTubeApiPromise) return youTubeApiPromise;
+
+  youTubeApiPromise = new Promise(resolve => {
+    const existingScript = document.querySelector('script[src*="youtube.com/iframe_api"]');
+    if (!existingScript) {
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      document.head.appendChild(tag);
+    }
+
+    const previousReady = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = () => {
+      if (typeof previousReady === 'function') {
+        previousReady();
+      }
+      resolve(window.YT);
+    };
+  });
+
+  return youTubeApiPromise;
+}
+
+function initProjectHoverPreviews() {
+  const previewCards = Array.from(document.querySelectorAll('.work-card[data-preview-id]'));
+  if (!previewCards.length) return;
+
+  // Skip on touch-first devices to avoid accidental video loads.
+  if (window.matchMedia('(pointer: coarse)').matches) return;
+
+  // Respect visitors who prefer reduced motion.
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const previewRoot = document.createElement('div');
+  previewRoot.className = 'preview-flyout';
+  previewRoot.setAttribute('aria-hidden', 'true');
+
+  const frame = document.createElement('div');
+  frame.className = 'preview-frame';
+  frame.textContent = 'Hover a project to preview it.';
+
+  const label = document.createElement('div');
+  label.className = 'preview-label';
+  label.textContent = 'Preview';
+
+  previewRoot.appendChild(frame);
+  previewRoot.appendChild(label);
+  document.body.appendChild(previewRoot);
+
+  let previewPlayer = null;
+  let hideTimer = null;
+  let activeVideoId = null;
+
+  const teardown = () => {
+    if (previewPlayer && typeof previewPlayer.destroy === 'function') {
+      previewPlayer.destroy();
+    }
+    previewPlayer = null;
+    frame.textContent = 'Hover a project to preview it.';
+  };
+
+  const mountVideo = (videoId, playbackRate) => {
+    activeVideoId = videoId;
+    frame.textContent = '';
+    loadYouTubeIframeApi()
+      .then(YT => {
+        if (previewPlayer) {
+          previewPlayer.destroy();
+        }
+
+        if (videoId !== activeVideoId) return;
+
+        previewPlayer = new YT.Player(frame, {
+          width: '100%',
+          height: '100%',
+          videoId,
+          playerVars: {
+            autoplay: 1,
+            mute: 1,
+            controls: 0,
+            rel: 0,
+            modestbranding: 1,
+            playsinline: 1,
+            loop: 1,
+            playlist: videoId,
+          },
+          events: {
+            onReady: event => {
+              try {
+                event.target.setPlaybackRate(playbackRate);
+              } catch (error) {
+                // If rate is unsupported, continue with default speed.
+              }
+              event.target.mute();
+              event.target.playVideo();
+            },
+          },
+        });
+      })
+      .catch(() => {
+        if (videoId !== activeVideoId) return;
+
+        const fallback = document.createElement('iframe');
+        fallback.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&playsinline=1&loop=1&playlist=${videoId}`;
+        fallback.title = 'Project preview';
+        fallback.allow = 'autoplay; encrypted-media; gyroscope; picture-in-picture';
+        frame.innerHTML = '';
+        frame.appendChild(fallback);
+      });
+  };
+
+  const showPreview = card => {
+    clearTimeout(hideTimer);
+    const videoId = card.dataset.previewId;
+    if (!videoId) return;
+
+    const playbackRate = Number(card.dataset.previewRate) || DEFAULT_PREVIEW_RATE;
+    const cardTitle = card.querySelector('h3');
+    label.textContent = cardTitle ? `${cardTitle.textContent} preview` : 'Preview';
+
+    mountVideo(videoId, playbackRate);
+    previewRoot.classList.add('is-visible');
+  };
+
+  const hidePreview = () => {
+    hideTimer = setTimeout(() => {
+      previewRoot.classList.remove('is-visible');
+      activeVideoId = null;
+      teardown();
+    }, 140);
+  };
+
+  previewCards.forEach(card => {
+    card.addEventListener('pointerenter', () => showPreview(card));
+    card.addEventListener('pointerleave', hidePreview);
+    card.addEventListener('focus', () => showPreview(card));
+    card.addEventListener('blur', hidePreview);
+  });
+}
+
+// Fade/slide elements into view when scrolled into the viewport.
 function initRevealAnimations() {
   const revealTargets = document.querySelectorAll('.reveal, .reveal-card');
   if (!revealTargets.length) return;
@@ -247,6 +421,7 @@ function initHeaderScrollEffect() {
   const header = document.querySelector('.page-header');
   if (!header) return;
 
+  // Add a condensed header style after the visitor scrolls a bit.
   const toggleHeaderState = () => {
     if (window.scrollY > 30) {
       header.classList.add('header-scrolled');
@@ -259,6 +434,7 @@ function initHeaderScrollEffect() {
   toggleHeaderState();
 }
 
+// Expands and collapses the contact form panel.
 function initContactToggle() {
   const contactSection = document.querySelector('.contact-section');
   if (!contactSection) return;
@@ -267,6 +443,7 @@ function initContactToggle() {
   const panel = contactSection.querySelector('.contact-panel');
   if (!toggleButton || !panel) return;
 
+  // Update aria attributes, button text, and styling when toggling the form.
   const setExpanded = expanded => {
     toggleButton.setAttribute('aria-expanded', expanded);
     panel.setAttribute('aria-hidden', !expanded);
@@ -294,6 +471,7 @@ function initArtGallery() {
   const gallery = document.getElementById('art-gallery');
   if (!gallery) return;
 
+  // Add more filenames here to grow the gallery without editing markup.
   const artFiles = ['piece-1.jpg', 'piece-2.jpg', 'piece-3.jpg', 'piece-4.jpg', 'piece-5.jpg', 'piece-6.jpg', 'piece-7.jpg'];
   const fragment = document.createDocumentFragment();
 
@@ -398,6 +576,8 @@ function createLightbox() {
   return { root: lightbox, image, closeButton };
 }
 
+// Highlights cards in carousels on mods/project pages; set `data-rotation="projects"`
+// to keep a row static.
 function initOrbitRotators() {
   const tracks = document.querySelectorAll('.orbit-track');
   if (!tracks.length) return;
@@ -448,6 +628,7 @@ function initOrbitRotators() {
   });
 }
 
+// Adds a soft overlay when navigating internal links for a smoother transition.
 function initPageTransitions() {
   const overlay = document.querySelector('.page-transition');
   if (!overlay) return;
