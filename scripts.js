@@ -567,20 +567,19 @@ function initProjectPreviews() {
   };
 
   const positionPopover = card => {
-    const rect = card.getBoundingClientRect();
-    const viewWidth = document.documentElement.clientWidth;
-    const scrollX = window.pageXOffset;
-    const scrollY = window.pageYOffset;
-    const offset = 18;
-    const width = popover.offsetWidth || 360;
-    const height = popover.offsetHeight || width * 0.56;
-    const desiredLeft = scrollX + rect.right + offset;
-    const maxLeft = scrollX + viewWidth - width - 12;
-    const clampedLeft = Math.max(scrollX + 12, Math.min(desiredLeft, maxLeft));
-    const centeredTop = scrollY + rect.top + rect.height / 2 - height / 2;
-    const top = Math.max(scrollY + 12, centeredTop);
-    popover.style.left = `${clampedLeft}px`;
-    popover.style.top = `${top}px`;
+    const header = document.querySelector('.page-header');
+    const headerHeight = header ? header.offsetHeight : 80;
+    const viewportHeight = window.innerHeight;
+    const popoverHeight = popover.offsetHeight || 202;
+    const cardRect = card.getBoundingClientRect();
+    const desiredTop = cardRect.top + (cardRect.height / 2) - (popoverHeight / 2);
+    const minTop = headerHeight + 14;
+    const maxTop = viewportHeight - popoverHeight - 14;
+    const clampedTop = Math.max(minTop, Math.min(desiredTop, maxTop));
+
+    popover.style.top = `${clampedTop}px`;
+    popover.style.right = '20px';
+    popover.style.left = 'auto';
   };
 
   const hidePreview = () => {
@@ -626,12 +625,6 @@ function initProjectPreviews() {
     card.addEventListener('mouseleave', hidePreview);
     card.addEventListener('focusout', hidePreview);
   });
-
-  window.addEventListener('scroll', () => {
-    if (activeCard && popover.classList.contains('is-visible')) {
-      positionPopover(activeCard);
-    }
-  }, { passive: true });
 
   window.addEventListener('resize', () => {
     if (activeCard && popover.classList.contains('is-visible')) {

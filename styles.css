@@ -677,7 +677,7 @@ h2 {
 }
 
 .preview-popover {
-  position: absolute;
+  position: fixed;
   width: 360px;
   aspect-ratio: 16 / 9;
   border-radius: 14px;
