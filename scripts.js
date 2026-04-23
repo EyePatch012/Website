@@ -518,10 +518,37 @@ function initProjectPreviews() {
     }
   });
 
+  const parseYouTubeId = url => {
+    const host = url.hostname.replace('www.', '');
+    if (host === 'youtu.be') {
+      return url.pathname.split('/').filter(Boolean)[0] || null;
+    }
+
+    if (!host.endsWith('youtube.com')) return null;
+
+    if (url.pathname === '/watch') {
+      return url.searchParams.get('v');
+    }
+
+    if (url.pathname.startsWith('/embed/')) {
+      return url.pathname.split('/').pop();
+    }
+
+    if (url.pathname.startsWith('/shorts/')) {
+      return url.pathname.split('/').pop();
+    }
+
+    return null;
+  };
+
   const buildSrc = card => {
     try {
-      const url = new URL(card.dataset.preview, window.location.href);
-      const videoId = url.pathname.split('/').pop();
+      const sourceUrl = new URL(card.dataset.preview, window.location.href);
+      const videoId = parseYouTubeId(sourceUrl);
+      const url = videoId
+        ? new URL(`https://www.youtube.com/embed/${videoId}`)
+        : sourceUrl;
+
       url.searchParams.set('autoplay', '1');
       url.searchParams.set('mute', '1');
       url.searchParams.set('controls', '0');
@@ -529,6 +556,7 @@ function initProjectPreviews() {
       url.searchParams.set('playsinline', '1');
       url.searchParams.set('loop', '1');
       url.searchParams.set('enablejsapi', '1');
+      url.searchParams.set('origin', window.location.origin);
       if (videoId) {
         url.searchParams.set('playlist', videoId);
       }
