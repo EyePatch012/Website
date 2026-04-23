@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ray</title>
+    <title>Ray | Gameplay Programmer</title>
     <link rel="stylesheet" href="styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&display=swap"
-          rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
     <div class="page-transition" aria-hidden="true">
         <div class="transition-core">
             <span class="transition-ring"></span>
             <span class="transition-ring delay"></span>
-            <p>Booting sequence...</p>
+            <p>Booting portfolio...</p>
         </div>
     </div>
 
@@ -21,76 +20,168 @@
         <h1 class="top-right" id="typewriter" data-text="Ray">Ray</h1>
         <nav aria-label="Primary navigation">
             <ul>
-                <li><a href="#about-skills">About &amp; Skills</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#featured-work">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="background-scatter" aria-hidden="true"></div>
-
     <main class="main-content">
-        <div id="about-skills" class="about-skills-container">
-            <section id="about" class="about-me half-section reveal">
-                <h2>About Me</h2>
+        <section class="hero-section reveal" id="top">
+            <p class="eyebrow">Gameplay Programming Portfolio</p>
+            <h2>Building responsive combat, scalable gameplay systems, and production-ready prototypes.</h2>
+            <p class="hero-lede">
+                I’m Ray, a game developer focused on Unreal Engine gameplay programming. I build and integrate systems for combat, movement,
+                AI behavior, and multiplayer-ready mechanics across solo projects, collaborations, and client work.
+            </p>
+            <div class="hero-tags" aria-label="Primary specialties">
+                <span class="chip">Unreal Engine 4/5</span>
+                <span class="chip">Gameplay Systems</span>
+                <span class="chip">Combat &amp; Movement</span>
+                <span class="chip">Replication Aware Design</span>
+                <span class="chip">AI Integration</span>
+            </div>
+            <div class="hero-actions">
+                <a class="primary-btn" href="projects.html">View Project Library</a>
+                <a class="ghost-btn" href="#contact">Contact Me</a>
+                <a class="ghost-btn" href="https://github.com/EyePatch012" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a class="ghost-btn" href="https://www.linkedin.com/in/rashid-anjum-425526249/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </section>
+
+        <section id="featured-work" class="projects-section reveal">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">Selected Projects</p>
+                    <h2>Featured Work</h2>
+                </div>
+                <a class="ghost-btn" href="projects.html">Open Full Project List</a>
+            </div>
+
+            <div class="case-grid">
+                <article class="case-card interactive-card">
+                    <img src="Project Icons/ShadowRupture.png" alt="Shadow Rupture cover art" />
+                    <div class="case-card-body">
+                        <h3>Shadow Rupture</h3>
+                        <p class="case-meta">Hack-and-Slash Prototype · Unreal Engine 4 · Solo Project</p>
+                        <p>
+                            Built combat flow, AI enemy logic, and movement tuning around Unreal ALS, then integrated finisher sequences
+                            through Sequencer to reinforce pacing and impact.
+                        </p>
+                        <a class="chip-link" href="shadow-rupture.html">Read case study →</a>
+                    </div>
+                </article>
+
+                <article class="case-card interactive-card">
+                    <img src="Project Icons/AirShift.png" alt="Airshift cover art" />
+                    <div class="case-card-body">
+                        <h3>Airshift</h3>
+                        <p class="case-meta">Third-Person Shooter PvP · Unreal Engine · Team Build</p>
+                        <p>
+                            Implemented high-mobility gameplay foundations in a stylized shooter environment with a focus on traversal,
+                            combat responsiveness, and competitive readability.
+                        </p>
+                        <a class="chip-link" href="airshift.html">Read case study →</a>
+                    </div>
+                </article>
+
+                <article class="case-card interactive-card">
+                    <img src="Project Icons/Emberfield.png" alt="Emberfield cover art" />
+                    <div class="case-card-body">
+                        <h3>Emberfield</h3>
+                        <p class="case-meta">Cozy Simulation · Unreal Engine · Systems Prototype</p>
+                        <p>
+                            Designed and integrated farming loops including AI animals, crop systems, inventory economy,
+                            and farm progression to support long-session gameplay.
+                        </p>
+                        <a class="chip-link" href="emberfield.html">Read case study →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="about" class="about-me reveal">
+            <div class="section-heading compact">
+                <div>
+                    <p class="eyebrow">Who I Am</p>
+                    <h2>About</h2>
+                </div>
+            </div>
+            <div class="about-layout">
                 <div class="about-content">
                     <p>
-                        I’m Ray, a game developer who loves turning ideas into gameplay that actually feels good to play. I’m studying Creative Media and Game Technology and mainly work in Unreal Engine, focusing on mechanics and fast, responsive combat. I enjoy building worlds with atmosphere and small details that pull players in. I’m always learning, experimenting, and pushing myself to make games that hit hard and leave something behind.
+                        I’m studying Creative Media and Game Technology while actively shipping gameplay-focused work. My projects emphasize
+                        game feel, technical structure, and system ownership from early prototype to polished playable builds.
+                    </p>
+                    <p>
+                        I focus on building mechanics that are clear under pressure: melee combat, traversal, AI encounters, and feature
+                        integrations that support designers and players at the same time.
                     </p>
                 </div>
-
                 <div class="about-photo-container">
-                    <img src="Images/ray-photo.jpg" alt="Static photo" class="about-photo static" />
-                    <img src="Images/kitty-transparent.gif" alt="Animated photo" class="about-photo gif" />
+                    <img src="Images/ray-photo.jpg" alt="Portrait of Ray" class="about-photo static" />
+                    <img src="Images/kitty-transparent.gif" alt="Animated portrait of Ray" class="about-photo gif" />
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="skills" class="skills half-section reveal">
-                <h2>Skills</h2>
-                <div class="skill">
-                    <h3>Language</h3>
-                    <ul><li>C</li><li>C++</li><li>C#</li><li>Java</li></ul>
+        <section id="skills" class="skills-section reveal">
+            <div class="section-heading compact">
+                <div>
+                    <p class="eyebrow">Technical Focus</p>
+                    <h2>Skills &amp; Focus Areas</h2>
                 </div>
+            </div>
+            <div class="focus-grid">
+                <article class="focus-card">
+                    <h3>Programming Languages</h3>
+                    <p>C, C++, C#, Java</p>
+                </article>
+                <article class="focus-card">
+                    <h3>Engines</h3>
+                    <p>Unreal Engine 4/5, Unity, GameMaker</p>
+                </article>
+                <article class="focus-card">
+                    <h3>Gameplay Domains</h3>
+                    <p>Level Design, Game Mechanics, Multiplayer Support, Concept Art</p>
+                </article>
+                <article class="focus-card">
+                    <h3>Production Software</h3>
+                    <p>Photoshop, Blender, Audacity</p>
+                </article>
+            </div>
+        </section>
 
-                <div class="skill">
-                    <h3>Engine</h3>
-                    <ul><li>Unreal Engine 4/5</li></ul>
-                    <ul><li>Unity Engine</li></ul>
-                    <ul><li>Game Maker</li></ul>
+        <section id="experience" class="experience-section reveal">
+            <div class="section-heading compact">
+                <div>
+                    <p class="eyebrow">Experience &amp; Roles</p>
+                    <h2>How I Work</h2>
                 </div>
+            </div>
+            <div class="timeline-grid">
+                <article>
+                    <h3>Solo Development</h3>
+                    <p>Owned full gameplay loops including system design, implementation, and iteration for prototypes like Shadow Rupture.</p>
+                </article>
+                <article>
+                    <h3>Collaborative Delivery</h3>
+                    <p>Contributed movement systems, level blockouts, and obstacle interactions in team environments with shared production goals.</p>
+                </article>
+                <article>
+                    <h3>Client &amp; Professional Work</h3>
+                    <p>Delivered scoped features on projects like Daydream and Nythe with milestone constraints and external stakeholders.</p>
+                </article>
+            </div>
+        </section>
 
-                <div class="skill">
-                    <h3>Field</h3>
-                    <ul>
-                        <li>Level design</li>
-                        <li>Programming</li>
-                        <li>Game Mechanics</li>
-                        <li>Multiplayer Support</li>
-                        <li>Concept Art</li>
-                    </ul>
-                </div>
-
-                <div class="skill">
-                    <h3>Software</h3>
-                    <ul><li>Photoshop</li><li>Blender</li><li>Audacity</li></ul>
-                </div>
-
-                <div class="skill">
-                    <h3>Communication</h3>
-                    <p>English, Bangla</p>
-                </div>
-            </section>
-        </div>
-
-        <!-- =======================
-             PORTFOLIO SECTION
-        ======================= -->
         <section id="portfolio" class="projects-section reveal">
             <div class="section-heading">
                 <div>
-                    <p class="eyebrow">Hub</p>
-                    <h2>Portfolio</h2>
+                    <p class="eyebrow">Portfolio Access</p>
+                    <h2>Explore More</h2>
                 </div>
             </div>
 
@@ -100,7 +191,7 @@
                     <div class="portal-copy">
                         <p class="eyebrow">Builds</p>
                         <h3>Projects</h3>
-                        <p>Playable experiments and prototypes with movement-heavy combat.</p>
+                        <p>Gameplay prototypes, collaborations, and professional production work.</p>
                         <span class="chip">Open library</span>
                     </div>
                 </a>
@@ -110,8 +201,8 @@
                     <div class="portal-copy">
                         <p class="eyebrow">Community</p>
                         <h3>Mods</h3>
-                        <p>Gameplay twists and collaborations that reshape existing titles.</p>
-                        <span class="chip">See the set</span>
+                        <p>Live mod support and feature extension work for existing games.</p>
+                        <span class="chip">See release</span>
                     </div>
                 </a>
 
@@ -120,28 +211,24 @@
                     <div class="portal-copy">
                         <p class="eyebrow">Visuals</p>
                         <h3>Art</h3>
-                        <p>Concept pieces and key art that capture the mood of each world.</p>
+                        <p>Concept and visual exploration that supports world tone and direction.</p>
                         <span class="chip">View gallery</span>
                     </div>
                 </a>
             </div>
         </section>
 
-        <!-- =======================
-             CONTACT
-        ======================= -->
         <section id="contact" class="contact-section reveal">
             <div class="contact-header">
-                <h2>Contact Me</h2>
+                <h2>Contact / CV / Links</h2>
                 <button class="contact-toggle" type="button" aria-expanded="false" aria-controls="contact-panel">
-                    Open communication link
+                    Open contact panel
                 </button>
             </div>
 
             <div id="contact-panel" class="contact-panel" aria-hidden="true">
                 <p>
-                    Whether you have a collaboration in mind or just want to talk about new mechanics,
-                    drop me a message and I’ll reply as soon as I can.
+                    For gameplay programming roles, contract development, or collaboration, send a message and I’ll get back as soon as possible.
                 </p>
 
                 <form class="contact-form" action="mailto:eyepatch012@gmail.com" method="post" enctype="text/plain">
@@ -151,9 +238,15 @@
                     <button type="submit" class="primary-btn">Send Email</button>
                 </form>
 
-                <p class="contact-alt">
-                    Prefer your own mail client? <a href="mailto:eyepatch012@gmail.com">Email me directly.</a>
-                </p>
+                <div class="contact-links">
+                    <a class="ghost-btn" href="mailto:eyepatch012@gmail.com">Direct Email</a>
+                    <a class="ghost-btn" href="https://github.com/EyePatch012" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a class="ghost-btn" href="https://www.linkedin.com/in/rashid-anjum-425526249/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a class="ghost-btn" href="https://x.com/EyePatch_012" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+                    <a class="ghost-btn" href="https://www.instagram.com/eyepatch_012/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </div>
+
+                <p class="contact-alt">CV available on request via email.</p>
             </div>
         </section>
     </main>
@@ -161,7 +254,7 @@
     <footer class="footer-glow reveal">
         <div class="footer-container">
             <div class="footer-contact">
-                <p>Contact Me:&nbsp;</p>
+                <p>Contact Me:</p>
                 <ul class="social-links">
                     <li><a href="https://x.com/EyePatch_012"><img src="Social Media Icons/twitter_6422210.png" alt="X profile" /></a></li>
                     <li><a href="https://www.linkedin.com/in/rashid-anjum-425526249/"><img src="Social Media Icons/linkedin_3536569.png" alt="LinkedIn profile" /></a></li>
@@ -169,9 +262,8 @@
                     <li><a href="https://www.instagram.com/eyepatch_012/"><img src="Social Media Icons/instagram_1384047.png" alt="Instagram profile" /></a></li>
                 </ul>
             </div>
-
             <div class="footer-copy">
-                <p>© 2026 My Game Dev Portfolio</p>
+                <p>© 2026 Ray · Gameplay Programmer Portfolio</p>
             </div>
         </div>
     </footer>

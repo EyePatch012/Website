@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Projects | Ray</title>
     <link rel="stylesheet" href="styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&display=swap"
-          rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 
 <body class="project-page">
@@ -14,7 +13,7 @@
         <div class="transition-core">
             <span class="transition-ring"></span>
             <span class="transition-ring delay"></span>
-            <p>Loading creative vault...</p>
+            <p>Loading project archive...</p>
         </div>
     </div>
 
@@ -22,66 +21,72 @@
         <h1 class="top-right" id="typewriter" data-text="Projects">Projects</h1>
         <nav aria-label="Secondary navigation">
             <ul class="breadcrumb-nav">
-                <li><a href="index.html#portfolio">← Back to Portfolio</a></li>
-                <li><a href="#main-list">Skip to list</a></li>
+                <li><a href="index.html#featured-work">← Back to Home</a></li>
+                <li><a href="#main-list">Skip to projects</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="background-scatter" aria-hidden="true"></div>
-
     <main class="main-content" id="main-list">
         <section class="work-index reveal">
-
-            <p class="eyebrow">Featured Builds</p>
-            <h2>Playable Experiments</h2>
+            <p class="eyebrow">Case Study Index</p>
+            <h2>Project Archive</h2>
             <p class="section-lede">
-                Browse builds by how they came together—solo experiments, team collaborations, or professional client work.
+                Each project highlights role, technical implementation focus, and the systems shipped or prototyped.
             </p>
 
-            <details class="work-folder" aria-label="Personal Projects">
+            <details class="work-folder" open aria-label="Personal Projects">
                 <summary class="folder-summary">
                     <div class="folder-meta">
                         <span class="folder-icon" aria-hidden="true">🗂️</span>
                         <div>
                             <h3>Personal Projects</h3>
-                            <p class="tiny-note">Solo-built prototypes where I handled design, code, and art.</p>
+                            <p class="tiny-note">Solo prototypes where I owned systems, implementation, and iteration.</p>
                         </div>
                     </div>
                     <span class="folder-indicator" aria-hidden="true"></span>
                 </summary>
 
                 <div class="work-grid">
-                    <a class="work-card" href="shadow-rupture.html"
-                       data-preview="https://www.youtube.com/embed/3lpnXtrVUWU"
-                       data-preview-rate="2">
+                    <a class="work-card" href="shadow-rupture.html" data-preview="https://www.youtube.com/embed/3lpnXtrVUWU" data-preview-rate="2">
                         <img src="Project Icons/ShadowRupture.png" alt="Shadow Rupture cover art" />
                         <div class="work-card-body">
                             <h3>Shadow Rupture</h3>
-                            <p>Hack-and-slash combat system with AI enemies and custom movement.</p>
-                            <span class="chip">Open project page</span>
+                            <p>Hack-and-slash prototype focused on reactive combat, AI encounter flow, and fluid traversal.</p>
+                            <ul class="work-bullets">
+                                <li><strong>Engine:</strong> Unreal Engine 4</li>
+                                <li><strong>Role:</strong> Solo gameplay programmer / designer</li>
+                                <li><strong>Built:</strong> Combat systems, AI behavior, ALS integration, finishers</li>
+                            </ul>
+                            <span class="chip">Open case study</span>
                         </div>
                     </a>
 
-                    <a class="work-card" href="airshift.html"
-                       data-preview="https://www.youtube.com/embed/HNqPgf8oJtQ?si=gYXl7VlMO7oi5imG"
-                       data-preview-rate="1.5">
+                    <a class="work-card" href="airshift.html" data-preview="https://www.youtube.com/embed/HNqPgf8oJtQ?si=gYXl7VlMO7oi5imG" data-preview-rate="1.5">
                         <img src="Project Icons/AirShift.png" alt="Airshift cover art" />
                         <div class="work-card-body">
                             <h3>Airshift</h3>
-                            <p>Third-person shooter PvP in a stylized environment with fast movement-based gameplay.</p>
-                            <span class="chip">Open project page</span>
+                            <p>Third-person shooter PvP project built around movement-first combat readability and speed.</p>
+                            <ul class="work-bullets">
+                                <li><strong>Type:</strong> Competitive shooter prototype</li>
+                                <li><strong>Role:</strong> Gameplay systems contributor</li>
+                                <li><strong>Built:</strong> Fast movement and combat foundations</li>
+                            </ul>
+                            <span class="chip">Open case study</span>
                         </div>
                     </a>
 
-                    <a class="work-card" href="emberfield.html"
-                       data-preview="https://www.youtube.com/embed/WUZVbSUuUxc?si=UCdRLBNBaT0q_9eV"
-                       data-preview-rate="1.2">
+                    <a class="work-card" href="emberfield.html" data-preview="https://www.youtube.com/embed/WUZVbSUuUxc?si=UCdRLBNBaT0q_9eV" data-preview-rate="1.2">
                         <img src="Project Icons/Emberfield.png" alt="Emberfield project card art" />
                         <div class="work-card-body">
                             <h3>Emberfield</h3>
-                            <p>Cozy farming game with AI animals, crop systems, and farm expansion progression.</p>
-                            <span class="chip">Open project page</span>
+                            <p>Cozy farming build featuring AI animals, economy loops, and expansion-driven progression systems.</p>
+                            <ul class="work-bullets">
+                                <li><strong>Engine:</strong> Unreal Engine</li>
+                                <li><strong>Role:</strong> Systems implementation</li>
+                                <li><strong>Built:</strong> Crop loops, economy, AI animal behavior</li>
+                            </ul>
+                            <span class="chip">Open case study</span>
                         </div>
                     </a>
                 </div>
@@ -93,21 +98,23 @@
                         <span class="folder-icon" aria-hidden="true">🗂️</span>
                         <div>
                             <h3>Collaborations</h3>
-                            <p class="tiny-note">Team-built experiments where I contributed mechanics, feel, and polish.</p>
+                            <p class="tiny-note">Team projects where I delivered specific gameplay and level features.</p>
                         </div>
                     </div>
                     <span class="folder-indicator" aria-hidden="true"></span>
                 </summary>
 
                 <div class="work-grid single-grid">
-                    <a class="work-card" href="collaborate-one.html"
-                       data-preview="https://www.youtube.com/embed/UpszCHQuGWc?si=_6J_OrC2SSjk5yWO"
-                       data-preview-rate="1.25">
+                    <a class="work-card" href="collaborate-one.html" data-preview="https://www.youtube.com/embed/UpszCHQuGWc?si=_6J_OrC2SSjk5yWO" data-preview-rate="1.25">
                         <img src="Project Icons/PartyGame.png" alt="The Real Escape project art" />
                         <div class="work-card-body">
                             <h3>The Real Escape</h3>
-                            <p>3D platformer collaboration focused on movement, level blockout, and dynamic obstacles.</p>
-                            <span class="chip">Open project page</span>
+                            <p>3D platformer collaboration built around movement, level pacing, and dynamic obstacle interactions.</p>
+                            <ul class="work-bullets">
+                                <li><strong>Role:</strong> Movement + level systems</li>
+                                <li><strong>Built:</strong> Blockout, traversal tuning, drag-and-drop obstacles</li>
+                            </ul>
+                            <span class="chip">Open case study</span>
                         </div>
                     </a>
 
@@ -115,8 +122,12 @@
                         <img src="Project Icons/Foodwaste.png" alt="Food Waste Awareness project art" />
                         <div class="work-card-body">
                             <h3>Food Waste Awareness Project</h3>
-                            <p>Collaboration project page with space for gameplay notes and an itch.io game link.</p>
-                            <span class="chip">Open project page</span>
+                            <p>Educational collaboration aimed at communicating food waste impact through interactive play.</p>
+                            <ul class="work-bullets">
+                                <li><strong>Type:</strong> Team awareness game</li>
+                                <li><strong>Status:</strong> Public playable build available</li>
+                            </ul>
+                            <span class="chip">Open case study</span>
                         </div>
                     </a>
                 </div>
@@ -128,33 +139,38 @@
                         <span class="folder-icon" aria-hidden="true">🗂️</span>
                         <div>
                             <h3>Client &amp; Professional Projects</h3>
-                            <p class="tiny-note">Paid production work with tighter scopes and delivery milestones.</p>
+                            <p class="tiny-note">Production work with delivery constraints, NDA boundaries, and release goals.</p>
                         </div>
                     </div>
                     <span class="folder-indicator" aria-hidden="true"></span>
                 </summary>
 
                 <div class="work-grid">
-
                     <a class="work-card" href="daydream.html">
                         <img src="Project Icons/Daydream.png" alt="Daydream cover art" />
                         <div class="work-card-body">
                             <h3>Daydream</h3>
-                            <p>A dreamy interactive narrative with surreal visuals and emotional beats.</p>
-                            <span class="chip">Open project page</span>
-                        </div>
-                    </a>
-                    <a class="work-card" href="nythe.html"
-                       data-preview="https://www.youtube.com/embed/8g_itBArlWg"
-                       data-preview-rate="1">
-                        <img src="Project Icons/Nythe.png" alt="Nythe cover art" />
-                        <div class="work-card-body">
-                            <h3>Nythe</h3>
-                            <p>A dark-fantasy prototype built around creature movement and mood.</p>
-                            <span class="chip">Open project page</span>
+                            <p>Surreal first-person co-op horror project with puzzle flow and atmospheric presentation.</p>
+                            <ul class="work-bullets">
+                                <li><strong>Type:</strong> Client / professional production</li>
+                                <li><strong>Public Link:</strong> Steam and studio YouTube</li>
+                            </ul>
+                            <span class="chip">Open case study</span>
                         </div>
                     </a>
 
+                    <a class="work-card" href="nythe.html" data-preview="https://www.youtube.com/embed/8g_itBArlWg" data-preview-rate="1">
+                        <img src="Project Icons/Nythe.png" alt="Nythe cover art" />
+                        <div class="work-card-body">
+                            <h3>Nythe</h3>
+                            <p>Dark-fantasy shooter concept focused on pacing, mood, and creature-driven combat identity.</p>
+                            <ul class="work-bullets">
+                                <li><strong>Type:</strong> Professional collaboration</li>
+                                <li><strong>Public Link:</strong> Studio communication channels</li>
+                            </ul>
+                            <span class="chip">Open case study</span>
+                        </div>
+                    </a>
                 </div>
             </details>
 
@@ -164,7 +180,7 @@
     <footer class="footer-glow">
         <div class="footer-container">
             <div class="footer-contact">
-                <p>Looking for dev builds or source drops?</p>
+                <p>Need detailed breakdowns, source clips, or build notes?</p>
                 <a class="primary-btn" href="mailto:eyepatch012@gmail.com">Email Me</a>
             </div>
         </div>
