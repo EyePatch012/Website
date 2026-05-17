@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -13,7 +13,7 @@
         <div class="transition-core">
             <span class="transition-ring"></span>
             <span class="transition-ring delay"></span>
-            <p>Loading dossier...</p>
+            <p>Loading...</p>
         </div>
     </div>
 
@@ -21,7 +21,7 @@
         <h1 class="top-right" id="typewriter" data-text="Airshift">Airshift</h1>
         <nav aria-label="Project navigation">
             <ul class="breadcrumb-nav">
-                <li><a href="projects.html">← Back to Projects</a></li>
+                <li><a href="projects.html">Back to Projects</a></li>
             </ul>
         </nav>
     </header>
@@ -35,13 +35,24 @@
             </div>
 
             <div class="project-copy">
+                <p class="project-role">Personal replicated multiplayer PvP prototype</p>
                 <p>
-                    Airshift is a third-person shooter PvP project set in a stylized environment with fast, movement-based gameplay with AI enemies.
+                    Airshift is my first polished replicated multiplayer game: a fast third-person PvP shooter built around networked movement, combat, weapons, stats, and multiplayer AI enemies.
+                </p>
+                <p class="asset-note">
+                    Visual elements are mostly assets, with some made or adjusted by me; my focus was building and polishing the mechanics.
                 </p>
 
-                <ul class="project-highlights">
-                    <li>Details and media links coming soon.</li>
-                </ul>
+                <section class="contribution-list" aria-label="My contributions to Airshift">
+                    <h2>What I Built</h2>
+                    <ul class="project-highlights">
+                        <li>Replicated player movement, stat systems, combat, and weapon behavior.</li>
+                        <li>Built client-server event matching for timing-sensitive actions such as montage playback.</li>
+                        <li>Created replicated AI enemies for multiplayer sessions.</li>
+                        <li>Implemented advanced player and AI movement, including running, dashing, double jumping, mantling, flying, and dodging.</li>
+                        <li>Used the project to apply and polish everything I learned about Unreal replication.</li>
+                    </ul>
+                </section>
 
                 <div class="project-cta">
                     <a class="ghost-btn" href="projects.html">Return to Projects</a>
@@ -61,7 +72,7 @@
         <div class="footer-container">
             <div class="footer-contact">
                 <p>Want to collaborate on Airshift?</p>
-                <a class="primary-btn" href="mailto:eyepatch012@gmail.com">Email Me</a>
+                <a class="primary-btn" href="mailto:rashidanjum012@gmail.com">Email Me</a>
             </div>
         </div>
     </footer>

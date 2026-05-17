@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -13,7 +13,7 @@
         <div class="transition-core">
             <span class="transition-ring"></span>
             <span class="transition-ring delay"></span>
-            <p>Booting sequence...</p>
+            <p>Loading...</p>
         </div>
     </div>
 
@@ -31,12 +31,44 @@
     <div class="background-scatter" aria-hidden="true"></div>
 
     <main class="main-content">
+        <section class="intro-panel reveal" aria-labelledby="intro-title">
+            <p class="eyebrow">Game Dev &amp; Unreal Programmer</p>
+            <h2 id="intro-title">Ray</h2>
+            <p class="intro-name">Sheikh Rashid Anjum Rayat</p>
+            <p class="intro-copy">
+                I build responsive gameplay systems in Unreal Engine, with a focus on combat, AI,
+                movement, prototyping, replication, and clean optimized Blueprint architecture.
+            </p>
+
+            <div class="intro-tags" aria-label="Core skills">
+                <span>Combat Systems</span>
+                <span>AI Behavior</span>
+                <span>Movement</span>
+                <span>Gameplay Mechanics</span>
+                <span>Replication</span>
+                <span>Blueprint Optimization</span>
+            </div>
+
+            <div class="intro-actions">
+                <a class="primary-btn" href="projects.html">View Projects</a>
+                <a class="ghost-btn" href="#contact">Contact Me</a>
+                <a class="ghost-btn" href="Sheikh_Rashid_Anjum_Rayat_CV.pdf" target="_blank" rel="noopener noreferrer">View CV</a>
+            </div>
+        </section>
+
         <div id="about-skills" class="about-skills-container">
             <section id="about" class="about-me half-section reveal">
                 <h2>About Me</h2>
                 <div class="about-content">
                     <p>
-                        I’m Ray, a game developer who loves turning ideas into gameplay that actually feels good to play. I’m studying Creative Media and Game Technology and mainly work in Unreal Engine, focusing on mechanics and fast, responsive combat. I enjoy building worlds with atmosphere and small details that pull players in. I’m always learning, experimenting, and pushing myself to make games that hit hard and leave something behind.
+                        I'm Ray, a game developer and Unreal programmer studying Creative Media and Game Technology. I care most about making mechanics feel responsive, readable, and fun: combat that has impact, AI that creates pressure, movement that gives players control, and systems that are clean enough to expand. My work is mostly focused on gameplay programming, Blueprint architecture, replication, and fast prototyping.
+                    </p>
+                </div>
+
+                <div class="education-note">
+                    <h3>Education</h3>
+                    <p>
+                        Bachelor of Science in Creative Media &amp; Game Technologies at Hanze University of Applied Sciences in the Netherlands. Before moving into game development, I completed two years toward a Bachelor of Science in Computer Science and Engineering at North South University in Bangladesh, then chose to follow my passion for building games.
                     </p>
                 </div>
 
@@ -49,58 +81,47 @@
             <section id="skills" class="skills half-section reveal">
                 <h2>Skills</h2>
                 <div class="skill">
-                    <h3>Language</h3>
-                    <ul><li>C</li><li>C++</li><li>C#</li><li>Java</li></ul>
+                    <h3>Unreal Gameplay Programming</h3>
+                    <ul><li>Blueprint systems</li><li>Animation Blueprints</li><li>Gameplay prototyping</li><li>In-engine asset integration</li></ul>
                 </div>
 
                 <div class="skill">
-                    <h3>Engine</h3>
-                    <ul><li>Unreal Engine 4/5</li></ul>
-                    <ul><li>Unity Engine</li></ul>
-                    <ul><li>Game Maker</li></ul>
+                    <h3>Gameplay Systems</h3>
+                    <ul><li>Combat systems</li><li>AI behavior</li><li>Movement systems</li><li>Ability and weapon systems</li><li>Damage and stat systems</li></ul>
                 </div>
 
                 <div class="skill">
-                    <h3>Field</h3>
-                    <ul>
-                        <li>Level design</li>
-                        <li>Programming</li>
-                        <li>Game Mechanics</li>
-                        <li>Multiplayer Support</li>
-                        <li>Concept Art</li>
-                    </ul>
+                    <h3>Multiplayer</h3>
+                    <ul><li>Replication</li><li>Client-server gameplay events</li><li>Steam multiplayer lobbies</li><li>Replicated AI and player actions</li></ul>
                 </div>
 
                 <div class="skill">
-                    <h3>Software</h3>
-                    <ul><li>Photoshop</li><li>Blender</li><li>Audacity</li></ul>
+                    <h3>Code &amp; Workflow</h3>
+                    <ul><li>Clean optimized Blueprint code</li><li>Interfaces and parent-child architecture</li><li>Soft references and async loading</li><li>Version control</li></ul>
                 </div>
 
                 <div class="skill">
-                    <h3>Communication</h3>
-                    <p>English, Bangla</p>
+                    <h3>Languages &amp; Engines</h3>
+                    <ul><li>Unreal Engine 4/5</li><li>Unity</li><li>C++</li><li>C#</li><li>Java</li></ul>
                 </div>
             </section>
         </div>
 
-        <!-- =======================
-             PORTFOLIO SECTION
-        ======================= -->
         <section id="portfolio" class="projects-section reveal">
             <div class="section-heading">
                 <div>
-                    <p class="eyebrow">Hub</p>
+                    <p class="eyebrow">Start Here</p>
                     <h2>Portfolio</h2>
                 </div>
             </div>
 
             <div class="portal-grid">
-                <a class="portal-card interactive-card" href="projects.html">
+                <a class="portal-card portal-card-primary interactive-card" href="projects.html">
                     <img src="Icons/Project.png" alt="Projects" />
                     <div class="portal-copy">
                         <p class="eyebrow">Builds</p>
                         <h3>Projects</h3>
-                        <p>Playable experiments and prototypes with movement-heavy combat.</p>
+                        <p>Professional Unreal work, personal systems prototypes, and collaborations focused on gameplay programming.</p>
                         <span class="chip">Open library</span>
                     </div>
                 </a>
@@ -120,31 +141,34 @@
                     <div class="portal-copy">
                         <p class="eyebrow">Visuals</p>
                         <h3>Art</h3>
-                        <p>Concept pieces and key art that capture the mood of each world.</p>
+                        <p>Visual practice and concept work. My portfolio focus is gameplay programming.</p>
                         <span class="chip">View gallery</span>
                     </div>
                 </a>
             </div>
         </section>
 
-        <!-- =======================
-             CONTACT
-        ======================= -->
         <section id="contact" class="contact-section reveal">
             <div class="contact-header">
                 <h2>Contact Me</h2>
                 <button class="contact-toggle" type="button" aria-expanded="false" aria-controls="contact-panel">
-                    Open communication link
+                    Open contact form
                 </button>
             </div>
 
             <div id="contact-panel" class="contact-panel" aria-hidden="true">
                 <p>
-                    Whether you have a collaboration in mind or just want to talk about new mechanics,
-                    drop me a message and I’ll reply as soon as I can.
+                    I'm open to Unreal gameplay programming roles, team projects, and collaboration work focused on mechanics, AI, movement, replication, and Blueprint systems.
                 </p>
 
-                <form class="contact-form" action="mailto:eyepatch012@gmail.com" method="post" enctype="text/plain">
+                <div class="contact-quick-links" aria-label="Contact links">
+                    <a class="primary-btn" href="mailto:rashidanjum012@gmail.com">Email Me</a>
+                    <a class="ghost-btn" href="Sheikh_Rashid_Anjum_Rayat_CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+                    <a class="ghost-btn" href="https://www.linkedin.com/in/rashid-anjum-425526249/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a class="ghost-btn" href="https://github.com/EyePatch012" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+
+                <form class="contact-form" action="mailto:rashidanjum012@gmail.com" method="post" enctype="text/plain">
                     <label>Your Name<input type="text" name="name" required /></label>
                     <label>Your Email<input type="email" name="email" required /></label>
                     <label>Message<textarea name="message" rows="4" required></textarea></label>
@@ -152,7 +176,7 @@
                 </form>
 
                 <p class="contact-alt">
-                    Prefer your own mail client? <a href="mailto:eyepatch012@gmail.com">Email me directly.</a>
+                    Prefer your own mail client? <a href="mailto:rashidanjum012@gmail.com">Email me directly.</a>
                 </p>
             </div>
         </section>
@@ -163,7 +187,6 @@
             <div class="footer-contact">
                 <p>Contact Me:&nbsp;</p>
                 <ul class="social-links">
-                    <li><a href="https://x.com/EyePatch_012"><img src="Social Media Icons/twitter_6422210.png" alt="X profile" /></a></li>
                     <li><a href="https://www.linkedin.com/in/rashid-anjum-425526249/"><img src="Social Media Icons/linkedin_3536569.png" alt="LinkedIn profile" /></a></li>
                     <li><a href="https://github.com/EyePatch012"><img src="Social Media Icons/pngwing.com.png" alt="GitHub profile" /></a></li>
                     <li><a href="https://www.instagram.com/eyepatch_012/"><img src="Social Media Icons/instagram_1384047.png" alt="Instagram profile" /></a></li>
@@ -171,7 +194,7 @@
             </div>
 
             <div class="footer-copy">
-                <p>© 2026 My Game Dev Portfolio</p>
+                <p>Â© 2026 My Game Dev Portfolio</p>
             </div>
         </div>
     </footer>

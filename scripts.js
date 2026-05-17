@@ -1,244 +1,36 @@
-// ===== Cursor trail setup =====
-// This section builds a glowing trail behind the cursor. Increase `trailCount`
-// to add more particles or tweak `getRandomBrightColor` for a different palette.
-const trailCount = 10;
-const trailElements = [];
-
-// Mark the document as JS-enabled to allow progressive enhancement styles.
+﻿// Mark the document as JS-enabled to allow progressive enhancement styles.
 document.addEventListener('DOMContentLoaded', () => {
   document.body.classList.add('js-enabled');
 });
 
-// Generates a near-white RGB color used for the glowing dots.
-function getRandomBrightColor() {
-  const shade = 170 + Math.random() * 70;
-  const value = Math.min(255, Math.round(shade));
-  return `rgb(${value}, ${value}, ${value})`;
-}
+const scatterImages = ['Images/sc1.png', 'Images/sc2.png', 'Images/sc3.png'];
 
-// Build the glowing dots that follow the cursor.
-for (let i = 0; i < trailCount; i++) {
-  const div = document.createElement('div');
-  div.classList.add('cursor-trail');
+// ===== Subtle background icons =====
+function initBackgroundIcons() {
+  const background = document.querySelector('.background-scatter');
+  if (!background || background.childElementCount) return;
 
-  const color = getRandomBrightColor();
-  div.style.backgroundColor = color;
-  div.style.boxShadow = `
-    0 0 6px ${color},
-    0 0 15px ${color},
-    0 0 25px ${color},
-    inset 0 0 10px ${color}
-  `;
-
-  document.body.appendChild(div);
-  trailElements.push(div);
-}
-
-// Track current mouse coordinates and previous dot positions for smooth movement.
-let mouseX = window.innerWidth / 2;
-let mouseY = window.innerHeight / 2;
-const positions = Array.from({ length: trailCount }, () => ({ x: mouseX, y: mouseY }));
-
-// Update target coordinates on pointer move.
-window.addEventListener('mousemove', (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-});
-
-// Linear interpolation helper; lower `amt` slows the follow speed.
-function lerp(start, end, amt) {
-  return (1 - amt) * start + amt * end;
-}
-
-function animateTrail() {
-  positions[0].x = lerp(positions[0].x, mouseX, 0.2);
-  positions[0].y = lerp(positions[0].y, mouseY, 0.2);
-
-  for (let i = 1; i < trailCount; i++) {
-    positions[i].x = lerp(positions[i].x, positions[i - 1].x, 0.2);
-    positions[i].y = lerp(positions[i].y, positions[i - 1].y, 0.2);
+  const numScatters = window.innerWidth < 700 ? 3 : 5;
+  for (let i = 0; i < numScatters; i++) {
+    const img = document.createElement('img');
+    img.src = scatterImages[i % scatterImages.length];
+    img.alt = '';
+    img.classList.add('scatter-img');
+    img.style.left = `${12 + (i * 19) % 76}%`;
+    img.style.top = `${14 + (i * 23) % 68}%`;
+    background.appendChild(img);
   }
-
-  trailElements.forEach((el, index) => {
-    const pos = positions[index];
-    el.style.left = (pos.x - el.offsetWidth / 2) + 'px';
-    el.style.top = (pos.y - el.offsetHeight / 2) + 'px';
-    el.style.opacity = (trailCount - index) / trailCount;
-
-    const scale = 0.85 + 0.15 * Math.sin(Date.now() / 500 + index);
-    el.style.transform = `scale(${scale})`;
-  });
-
-  // Re-run each frame for continuous motion.
-  requestAnimationFrame(animateTrail);
-}
-
-function updateTrailColors() {
-  trailElements.forEach(el => {
-    const color = getRandomBrightColor();
-    el.style.backgroundColor = color;
-    el.style.boxShadow = `
-      0 0 6px ${color},
-      0 0 15px ${color},
-      0 0 25px ${color},
-      inset 0 0 10px ${color}
-    `;
-  });
-}
-
-// Change the delay here to adjust how frequently the colors cycle.
-setInterval(updateTrailColors, 2000);
-animateTrail();
-
-// ===== Typing effect for page titles =====
-function initTypewriter() {
-  const typewriterTarget = document.getElementById('typewriter');
-  if (!typewriterTarget) return;
-  const text = typewriterTarget.dataset.text || typewriterTarget.textContent.trim();
-  // Lower `speed` for faster typing, higher for slower.
-  const speed = 150;
-  let index = 0;
-  typewriterTarget.textContent = '';
-
-  (function typeWriter() {
-    if (index < text.length) {
-      typewriterTarget.textContent += text.charAt(index);
-      index++;
-      setTimeout(typeWriter, speed);
-    }
-  })();
-}
-
-const scatterImages = ['Images/sc1.png', 'Images/sc2.png', 'Images/sc3.png', 'Images/0.png', 'Images/1.png'];
-
-// ===== Floating background icons =====
-function getRandomDropShadow() {
-  const x = (Math.random() * 10 - 5).toFixed(1) + 'px';
-  const y = (Math.random() * 10 - 5).toFixed(1) + 'px';
-  const blur = (5 + Math.random() * 5).toFixed(1) + 'px';
-  const tone = 160 + Math.random() * 80;
-  const value = Math.min(255, Math.round(tone));
-  const color = `rgba(${value}, ${value}, ${value}, 0.7)`;
-  return `${x} ${y} ${blur} ${color}`;
-}
-
-function applyRandomGlow(el) {
-  const glow = getRandomDropShadow();
-  el.style.filter = `drop-shadow(${glow})`;
-}
-
-function positionRandomly(el) {
-  el.style.left = 5 + Math.random() * 90 + '%';
-  el.style.top = 5 + Math.random() * 90 + '%';
-  el.style.animationDelay = (Math.random() * 8) + 's';
-}
-
-function initAquariumIcons() {
-  let aquarium = document.querySelector('.background-scatter');
-  if (!aquarium) {
-    aquarium = document.createElement('div');
-    aquarium.classList.add('background-scatter');
-    aquarium.setAttribute('aria-hidden', 'true');
-    document.body.appendChild(aquarium);
-  }
-
-  if (!aquarium.childElementCount) {
-    const numScatters = window.innerWidth < 600 ? 12 : 20;
-    for (let i = 0; i < numScatters; i++) {
-      const img = document.createElement('img');
-      img.src = scatterImages[i % scatterImages.length];
-      img.alt = 'Floating decorative icon';
-      img.classList.add('scatter-img');
-      img.setAttribute('tabindex', '0');
-      img.setAttribute('role', 'img');
-      positionRandomly(img);
-      applyRandomGlow(img);
-      aquarium.appendChild(img);
-    }
-  }
-
-  const fishIcons = Array.from(aquarium.querySelectorAll('.scatter-img'));
-  if (!fishIcons.length) return;
-
-  // Each scatter image drifts slowly and responds to the cursor for a playful feel.
-  const fishData = fishIcons.map(icon => ({
-    el: icon,
-    driftSpeed: 0.15 + Math.random() * 0.25,
-    driftRange: 12 + Math.random() * 10,
-    phase: Math.random() * Math.PI * 2
-  }));
-
-  let pointer = { x: 0, y: 0, active: false };
-
-  // Track pointer location so icons can gently repel away.
-  window.addEventListener('pointermove', event => {
-    pointer = { x: event.clientX, y: event.clientY, active: true };
-  });
-
-  function animateFish(time) {
-    fishData.forEach(fish => {
-      const driftX = Math.cos((time / 1000) * fish.driftSpeed + fish.phase) * fish.driftRange;
-      const driftY = Math.sin((time / 1000) * fish.driftSpeed + fish.phase) * fish.driftRange;
-
-      let repelX = 0;
-      let repelY = 0;
-
-      if (pointer.active) {
-        const rect = fish.el.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-        const dx = centerX - pointer.x;
-        const dy = centerY - pointer.y;
-        const distance = Math.hypot(dx, dy);
-        if (distance < 160) {
-          const strength = (160 - distance) / 160;
-          repelX = dx * strength * 0.8;
-          repelY = dy * strength * 0.8;
-        }
-      }
-
-      fish.el.style.transform = `translate(${driftX + repelX}px, ${driftY + repelY}px) rotate(${driftX * 0.3}deg)`;
-    });
-
-    // Keep the icons moving smoothly.
-    requestAnimationFrame(animateFish);
-  }
-
-  // Start the loop immediately after paint.
-  requestAnimationFrame(animateFish);
-
-  // Small interaction to scatter an icon to a fresh random spot.
-  const dartAway = icon => {
-    icon.classList.add('is-darting');
-    positionRandomly(icon);
-    setTimeout(() => icon.classList.remove('is-darting'), 900);
-  };
-
-  fishIcons.forEach(icon => {
-    icon.addEventListener('click', () => dartAway(icon));
-    icon.addEventListener('keydown', event => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        dartAway(icon);
-      }
-    });
-  });
-
-  // Refresh the glow so scattered icons shimmer over time.
-  setInterval(() => fishIcons.forEach(applyRandomGlow), 4000);
 }
 
 // Run interactive enhancements once the page has fully loaded assets.
 window.addEventListener('load', () => {
-  initTypewriter();
   initRevealAnimations();
   initHeaderScrollEffect();
-  initAquariumIcons();
+  initBackgroundIcons();
   initContactToggle();
   initArtGallery();
   initOrbitRotators();
   initProjectPreviews();
-  initPageTransitions();
 });
 
 // Fade/slide elements into view when scrolled into the viewport.
@@ -298,7 +90,7 @@ function initContactToggle() {
     toggleButton.setAttribute('aria-expanded', expanded);
     panel.setAttribute('aria-hidden', !expanded);
     contactSection.classList.toggle('contact-open', expanded);
-    toggleButton.textContent = expanded ? 'Close communication link' : 'Open communication link';
+    toggleButton.textContent = expanded ? 'Close contact form' : 'Open contact form';
   };
 
   setExpanded(false);
@@ -407,7 +199,7 @@ function createLightbox() {
   closeButton.type = 'button';
   closeButton.className = 'lightbox-close';
   closeButton.setAttribute('aria-label', 'Close artwork');
-  closeButton.textContent = '×';
+  closeButton.textContent = 'x';
 
   const image = document.createElement('img');
   image.alt = '';
@@ -633,39 +425,3 @@ function initProjectPreviews() {
   });
 }
 
-// Adds a soft overlay when navigating internal links for a smoother transition.
-function initPageTransitions() {
-  const overlay = document.querySelector('.page-transition');
-  if (!overlay) return;
-
-  const hideOverlay = () => overlay.classList.add('is-hidden');
-  const showOverlay = () => overlay.classList.remove('is-hidden');
-
-  setTimeout(hideOverlay, 400);
-  window.addEventListener('pageshow', () => hideOverlay());
-
-  const links = document.querySelectorAll('a[href]');
-  links.forEach(link => {
-    const href = link.getAttribute('href');
-    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
-    if (link.target === '_blank') return;
-
-    let url;
-    try {
-      url = new URL(href, window.location.href);
-    } catch (error) {
-      return;
-    }
-
-    if (url.origin !== window.location.origin) return;
-
-    link.addEventListener('click', event => {
-      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-      event.preventDefault();
-      showOverlay();
-      setTimeout(() => {
-        window.location.href = url.href;
-      }, 450);
-    });
-  });
-}

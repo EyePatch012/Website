@@ -13,7 +13,7 @@
         <div class="transition-core">
             <span class="transition-ring"></span>
             <span class="transition-ring delay"></span>
-            <p>Loading dossier...</p>
+            <p>Loading...</p>
         </div>
     </div>
 
@@ -21,7 +21,7 @@
         <h1 class="top-right" id="typewriter" data-text="Emberfield">Emberfield</h1>
         <nav aria-label="Project navigation">
             <ul class="breadcrumb-nav">
-                <li><a href="projects.html">← Back to Projects</a></li>
+                <li><a href="projects.html">Back to Projects</a></li>
             </ul>
         </nav>
     </header>
@@ -35,17 +35,24 @@
             </div>
 
             <div class="project-copy">
+                <p class="project-role">Work-in-progress personal systems project</p>
                 <p>
-                    Emberfield is a cozy farming game featuring AI animals, crop and tree management,
-                    buying and selling systems, and farm-building progression.
+                    Emberfield is a cozy farming game I started to explore systems outside my usual combat and movement-focused work. The project focuses on clean architecture, optimized loading, and flexible gameplay systems.
+                </p>
+                <p class="asset-note">
+                    Visual elements are mostly assets, with some made or adjusted by me; my focus was on the mechanics, systems architecture, and optimized Blueprint implementation.
                 </p>
 
-                <ul class="project-highlights">
-                    <li>AI-driven animals and behavior loops.</li>
-                    <li>Crop and tree farming systems.</li>
-                    <li>Farm economy with buying and selling.</li>
-                    <li>Farm expansion and building upgrades.</li>
-                </ul>
+                <section class="contribution-list" aria-label="My contributions to Emberfield">
+                    <h2>What I Built</h2>
+                    <ul class="project-highlights">
+                        <li>Built an advanced inventory system with drag-and-drop item handling.</li>
+                        <li>Created building placement, interaction, farming, crop growth, and animal production systems.</li>
+                        <li>Implemented save and load support for persistent farm progression.</li>
+                        <li>Focused on optimized Blueprint architecture using async loading and soft references.</li>
+                        <li>Used parent-child relationships and interfaces to keep systems reusable and easy to expand.</li>
+                    </ul>
+                </section>
 
                 <section class="video-wrapper" aria-label="Emberfield gameplay video">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/WUZVbSUuUxc?autoplay=0&mute=0&rel=0"
@@ -66,7 +73,7 @@
         <div class="footer-container">
             <div class="footer-contact">
                 <p>Want to collaborate?</p>
-                <a class="primary-btn" href="mailto:eyepatch012@gmail.com">Email Me</a>
+                <a class="primary-btn" href="mailto:rashidanjum012@gmail.com">Email Me</a>
             </div>
         </div>
     </footer>
